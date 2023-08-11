@@ -903,7 +903,7 @@ function	script	Glorius_Effect	{
 			bonus2 bIgnoreDefRaceRate,RC_DemiHuman,30;
 			bonus2 bIgnoreDefRaceRate,RC_Player,30;
 			bonus bUnbreakableWeapon;
-			bonus bAtkRange ,1;
+			bonus bAtkRange,1;
 			if(.@r>=4) {
 				autobonus "{ bonus bFlee,10; }",50,5000,BF_SHORT|BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
 				bonus2 bSkillAtk,"ASC_METEORASSAULT",30;
