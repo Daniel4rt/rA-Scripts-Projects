@@ -173,8 +173,8 @@ function	script	Glorius_Effect	{
 				bonus bBaseAtk,20;
 				bonus bInt,20;
 				bonus bAspdRate,5;
-				bonus bAddRace,RC_DemiHuman,15;
-				bonus bAddRace,RC_Player,15;
+				bonus2 bAddRace,RC_DemiHuman,15;
+				bonus2 bAddRace,RC_Player,15;
 	    }
 	    if(.@r>8) {
 	        bonus4 bAutoSpellOnSkill,"CG_ARROWVULCAN","SL_BARDDANCER",1,1000;
@@ -413,7 +413,8 @@ function	script	Glorius_Effect	{
 				bonus bInt,5;
 				bonus bDelayrate,-10;
 				bonus bMatkrate,10;
-				bonus bSubRace,10;
+				bonus2 bSubRace,RC_DemiHuman,10;
+				bonus2 bSubRace,RC_Player,10;
 				if(getskilllv("MG_THUNDERSTORM")>=10) {
 					bonus5 bAutoSpellOnSkill,"MG_THUNDERSTORM","PR_KYRIE",5,50,1;
 				}
