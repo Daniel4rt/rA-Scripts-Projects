@@ -331,7 +331,7 @@ function	script	Glorius_Effect	{
 	        bonus2 bIgnoreDefRaceRate,RC_Player,10;
 	    }
 	    if(.@r>6) {
-	        bonus5 bAutoSpell,"MO_INVESTIGATE",5,50;
+	        bonus5 bAutoSpell,"MO_INVESTIGATE",5,50,BF_SHORT,0;
 	        bonus2 bAddEff,Eff_Curse,500;
 					//Slaughter Item Skill
 					bonus2 bAddRace,RC_DemiHuman,pow((.@r-4),2);
