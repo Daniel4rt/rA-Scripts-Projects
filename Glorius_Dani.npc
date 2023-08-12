@@ -465,13 +465,13 @@ function	script	Glorius_Effect	{
 				bonus2 bIgnoreMdefRaceRate,RC_DemiHuman,pow((.@r-4),2);
 				bonus2 bIgnoreMdefRaceRate,RC_Player,pow((.@r-4),2);
 				if(getskilllv("WZ_METEOR") >= 10) {
-				bonus5 bAutoSpellOnSkill,"WZ_METEOR","MG_SAFETYWALL",5,20,0;
+					bonus5 bAutoSpellOnSkill,"WZ_METEOR","MG_SAFETYWALL",5,20,0;
 				}
 				if(getskilllv("WZ_VERMILION") >= 10) {
-				bonus5 bAutoSpellOnSkill,"WZ_VERMILION","MG_SAFETYWALL",5,20,0;
+					bonus5 bAutoSpellOnSkill,"WZ_VERMILION","MG_SAFETYWALL",5,20,0;
 				}
 				if(getskilllv("WZ_STORMGUST") >= 10) {
-				bonus5 bAutoSpellOnSkill,"WZ_STORMGUST","MG_SAFETYWALL",5,20,0;
+					bonus5 bAutoSpellOnSkill,"WZ_STORMGUST","MG_SAFETYWALL",5,20,0;
 				}
 			}
 			if(.@r>=9) {
