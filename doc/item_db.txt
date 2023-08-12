@@ -1,0 +1,46 @@
+// Items Additional Database
+//
+// Structure of Database:
+// ID,Name,Name,Type,Price,Sell,Weight,ATK[:MATK],DEF,Range,Slot,Job,Class,Gender,Loc,wLV,eLV[:maxLevel],Refineable,View,{ Script },{ OnEquip_Script },{ OnUnequip_Script }
+//
+
+//Rework de Glorius
+1310,Krieger_Onehand_Axe1,Glorious Cleaver,5,20,,0,130,,1,0,0x000444A2,7,2,2,4,80,1,6,{ callfunc "Glorius_Effect",1310; } },{},{}
+
+1382,Krieger_Twohand_Axe1,Glorious Two-Handed Axe,5,20,10,0,250,,4,0,0x000444A2,7,2,34,4,70,1,7,{ callfunc "Glorius_Effect",1382; },{},{}
+1927,Krieger_Instrument1,Glorious Guitar,5,20,10,0,150,,1,0,0x00080000,7,1,2,4,70,1,13,{ callfunc "Glorius_Effect",1927; },{},{}
+1546,Krieger_Onehand_Mace1,Glorious Morning Star,5,20,10,0,90,,1,0,0x0004C5B3,7,2,2,4,70,1,8,{ callfunc "Glorius_Effect",1546; },{},{}
+13307,Krieger_Huuma_Shuriken1,Glorious Shuriken,5,20,10,0,150,,1,0,0x02020000,7,2,34,4,70,1,22,{ callfunc "Glorius_Effect",13307; },{},{}
+2444,Krieger_Shoes1,Glorious Shoes,4,20,,0,,0,,0,0xFFFFFFFE,7,2,64,,70,1,0,{ callfunc "Glorius_Effect",2444; },{},{}
+2394,Krieger_Suit1,Glorious Suit,4,20,,0,,0,,0,0xFFFFFFFE,7,2,16,,70,1,0,{ callfunc "Glorius_Effect",2394; },{},{}
+2549,Krieger_Muffler1,Glorious Muffler,4,20,,0,,0,,0,0xFFFFFFFE,7,2,4,,70,1,0,{ callfunc "Glorius_Effect",2549; },{},{}
+2446,Krieger_Shoes3,Glorious Mass-Production Shoes,4,20,,0,,0,,0,0xFFFFFFFE,7,2,64,,70,1,0,{ callfunc "Glorius_Effect",2446; },{},{}
+2396,Krieger_Suit3,Glorious Mass-Production Suit,4,20,,0,,0,,0,0xFFFFFFFE,7,2,16,,70,1,0,{ callfunc "Glorius_Effect",2396; },{},{}
+2445,Krieger_Shoes2,Glorious Popularized Shoes,4,20,,0,,0,,0,0xFFFFFFFE,7,2,64,,61,1,0,{ callfunc "Glorius_Effect",2445; },{},{}
+2395,Krieger_Suit2,Glorious Popularized Suit,4,20,,0,,0,,0,0xFFFFFFFE,7,2,16,,61,1,0,{ callfunc "Glorius_Effect",2395; },{},{}
+2774,Krieger_Ring3,Glorious Popularized Ring,4,20,,0,,0,,0,0xFFFFFFFE,7,2,136,,0,0,0,{ callfunc "Glorius_Effect",2774; },{},{}
+13110,Krieger_Pistol1,Glorious Pistol,5,0,,0,130,,7,0,0x41000000,7,2,34,4,70,1,17,{ callfunc "Glorius_Effect",13110; },{},{}
+
+1576,Krieger_Book1,Glorious Tablet,5,20,,0,90,,1,0,0x00410100,7,2,2,4,80,1,15,{ callfunc "Glorius_Effect",1576; },{},{}
+1282,Krieger_Katar2,Glorious Jamadhar,5,20,,0,140,,1,0,0x00001000,7,2,34,4,80,1,16,{ callfunc "Glorius_Effect",1282; },{},{}
+1310,Krieger_Onehand_Axe1,Glorious Cleaver,5,20,,0,130,,1,0,0x000444A2,7,2,2,4,80,1,6,{ callfunc "Glorius_Effect",1310; },{},{}
+1576,Krieger_Book1,Glorious Tablet,5,20,,0,90,,1,0,0x00410100,7,2,2,4,80,1,15,{ callfunc "Glorius_Effect",1576; },{},{}
+
+2002,Krieger_Twohand_Staff1,Glorious Destruction Staff,5,20,,0,70,,1,0,0x00018314,7,2,34,4,80,1,23,{ callfunc "Glorius_Effect",2002; },{},{}
+//Set Ninja
+61000,Emp_Ninja_Armor,Ninja Armor,4,10,,400,,3,,1,0x02000000,7,2,16,,90,1,0,{ callfunc "Glorius_Effect",61000; },{},{}
+61001,Emp_Ninja_Garment,Ninja Garment,4,1000,,200,,3,,1,0x02000000,7,2,4,,90,1,0,{ callfunc "Glorius_Effect",61001; },{},{}
+61002,Emp_Ninja_Shoes,Ninja Shoes,4,3500,,400,,2,,3,0x02000000,7,2,64,,90,1,0,{ callfunc "Glorius_Effect",61002; },{},{}
+//Set Gunslinger
+61004,Emp_Gunslinger_Armor,Gunslinger Armor,4,10,,400,,3,,1,0x41000000,7,2,16,,90,1,0,{ callfunc "Glorius_Effect",61004; },{},{}
+61005,Emp_Gunslinger_Garment,Gunslinger Garment,4,1000,,200,,3,,1,0x41000000,7,2,4,,90,1,0,{ callfunc "Glorius_Effect",61005; },{},{}
+61006,Emp_Gunslinger_Shoes,Gunslinger Shoes,4,3500,,400,,2,,3,0x41000000,7,2,64,,90,1,0,{ callfunc "Glorius_Effect",61006; },{},{}
+
+2773,Krieger_Ring2,Glorious Mass-Production Ring,4,20,,0,,0,,0,0xFFFFFFFE,7,2,136,,61,0,0,{ callfunc "Glorius_Effect",2773; },{},{}
+2772,Krieger_Ring1,Glorious Ring,4,20,,0,,0,,0,0xFFFFFFFE,7,2,136,,81,0,0,{ callfunc "Glorius_Effect",2772; },{},{}
+1281,Krieger_Katar1,Glorious Bloody Roar,5,20,,0,140,,1,0,0x00001000,7,2,34,4,80,1,16,{ callfunc "Glorius_Effect",1281; },{},{}
+1827,Krieger_Knuckle2,Glorious Fist,5,20,,0,30,,1,0,0x00008100,7,2,2,4,80,1,12,{ callfunc "Glorius_Effect",1827; },{},{}
+1426,Krieger_Onehand_Spear1,Glorious Spear,5,20,,0,130,,3,0,0x00004082,7,2,2,4,80,1,4,{ callfunc "Glorius_Effect",1426; },{},{}
+1486,Krieger_Twohand_Spear1,Glorious Lance,5,20,,0,220,,3,0,0x00004082,7,2,34,4,80,1,5,{ callfunc "Glorius_Effect",1486; },{},{}
+13418,Krieger_Onehand_Sword3,Glorious Holy Avenger,5,20,,0,130,,1,0,0x000444A2,7,2,2,4,80,1,2,{ callfunc "Glorius_Effect",13418; },{},{}
+1826,Krieger_Knuckle1,Glorious Claw,5,20,,0,30,,1,0,0x00008100,7,2,2,4,80,1,12,{ callfunc "Glorius_Effect",1826; },{},{}
