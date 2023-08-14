@@ -860,7 +860,7 @@ function	script	Glorius_Effect	{
 			bonus2 bIgnoreDefRaceRate,RC_DemiHuman,20;
 			bonus2 bIgnoreDefRaceRate,RC_Player,20;
 			bonus bUnbreakableWeapon;
-			if(.@r>3) {
+			if(.@r>=4) {
 				bonus2 bSkillAtk,"GS_RAPIDSHOWER",(.@r*5);
 				bonus2 bSkillAtk,"GS_PIERCINGSHOT",(.@r*5);
 				bonus2 bSkillAtk,"GS_TRACKING",(.@r*5);
@@ -871,7 +871,7 @@ function	script	Glorius_Effect	{
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
 				bonus2 bIgnoreDefRaceRate,RC_Player,10;
 			}
-			if(.@r>5) {
+			if(.@r>=6) {
 				bonus bBaseAtk,10;
 				bonus bCritAtkRate,5;
 				bonus bCriticalRate,5;
@@ -885,7 +885,7 @@ function	script	Glorius_Effect	{
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
 				bonus2 bIgnoreDefRaceRate,RC_Player,10;
 			}
-			if(.@r>6) {
+			if(.@r>=7) {
 				bonus bBaseAtk,15;
 				bonus bCriticalRate,10;
 				bonus bMaxHPrate,10;
@@ -901,7 +901,7 @@ function	script	Glorius_Effect	{
 				bonus2 bAddRace,RC_DemiHuman,pow((.@r-4),2);
 				bonus2 bAddRace,RC_Player,pow((.@r-4),2);
 			}
-			if(.@r>8) {
+			if(.@r>=9) {
 				bonus bBaseAtk,20;
 				bonus bCriticalRate,15;
 				bonus bMaxHPrate,5;
@@ -913,7 +913,7 @@ function	script	Glorius_Effect	{
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,5;
 				bonus2 bIgnoreDefRaceRate,RC_Player,5;
 			}
-			if(.@r>9) {
+			if(.@r>=10) {
 				bonus bBaseAtk,25;
 				bonus bCriticalRate,20;
 				bonus bMaxHPrate,10;
