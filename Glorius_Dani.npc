@@ -184,7 +184,7 @@ function	script	Glorius_Effect	{
 				bonus2 bAddRace,RC_DemiHuman,pow((.@r-4),2);
 				bonus2 bAddRace,RC_Player,pow((.@r-4),2);
 
-				bonus4 bAutoSpellOnSkill,"CG_ARROWVULCAN","CG_TAROTCARD",5,30;
+				bonus5 bAutoSpellOnSkill,"CG_ARROWVULCAN","CG_TAROTCARD",5,30,1;
 				bonus2 bLongAtkAddRace,RC_DemiHuman,30;
 				bonus2 bLongAtkAddRace,RC_Player,30;
 				bonus bBaseAtk,20;
