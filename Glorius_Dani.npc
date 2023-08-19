@@ -194,7 +194,7 @@ function	script	Glorius_Effect	{
 				bonus2 bAddRace,RC_Player,15;
 			}
 			if(.@r>8) {
-				bonus4 bAutoSpellOnSkill,"CG_ARROWVULCAN","SL_BARDDANCER",1,1000;
+				bonus4 bAutoSpellOnSkill,"CG_ARROWVULCAN","SL_BARDDANCER",1,10;
 				bonus bLongAtkRate,20;
 				bonus2 bAddRace,RC_DemiHuman,5;
 				bonus2 bAddRace,RC_Player,5;
