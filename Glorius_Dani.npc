@@ -737,7 +737,7 @@ function	script	Glorius_Effect	{
 				bonus2 bMagicAddEle,Ele_Fire,25;
 				bonus2 bMagicAddEle,Ele_Water,25;
 				bonus2 bMagicAddEle,Ele_Wind,25;
-				bonus2 bMagicAtkEle_Shadow,25;
+				bonus2 bMagicAtkEle,Ele_Shadow,25;
 				autobonus2 "{ bonus bBaseAtk,50; }",30,5000,BF_SHORT|BF_LONG|BF_MAGIC,"{ specialeffect2 EF_ENHANCE; }";
 			}
 			break;
@@ -798,7 +798,7 @@ function	script	Glorius_Effect	{
 				bonus2 bMagicAddEle,Ele_Fire,25;
 				bonus2 bMagicAddEle,Ele_Water,25;
 				bonus2 bMagicAddEle,Ele_Wind,25;
-				bonus2 bMagicAtkEle_Shadow,25;
+				bonus2 bMagicAtkEle,Ele_Shadow,25;
 			}
 			break;
 		case 13418:
@@ -951,11 +951,11 @@ function	script	Glorius_Effect	{
 				bonus2 bSkillAtk,"SM_MAGNUM",30;
 				bonus2 bSkillAtk,"ASC_BREAKER",30;
 				autobonus "{ bonus bFlee,10; }",50,5000,BF_SHORT|BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
-				bonus2 bMagicAtkEle_Shadow,5;
-				bonus2 bMagicAtkEle_Undead,5;
-				bonus2 bMagicAtkEle_Ghost,5;
-				bonus2 bMagicAtkEle_Poison,5;
-				bonus2 bMagicAtkEle_Holy,5;
+				bonus2 bMagicAtkEle,Ele_Shadow,5;
+				bonus2 bMagicAtkEle,Ele_Undead,5;
+				bonus2 bMagicAtkEle,Ele_Ghost,5;
+				bonus2 bMagicAtkEle,Ele_Poison,5;
+				bonus2 bMagicAtkEle,Ele_Holy,5;
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
 				bonus2 bIgnoreDefRaceRate,RC_Player,10;
 			}
@@ -999,7 +999,7 @@ function	script	Glorius_Effect	{
 				bonus2 bSkillAtk,"AS_SONICBLOW",5;
 				autobonus "{ bonus bHit,10; }",50,5000,BF_SHORT|BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
 				bonus2 bAddEff,Eff_Freeze,500;
-				bonus5 bAutoSpell,"PR_IMPOSITIO",5,50,BF_SHORT|BF_NORMAL|BF_SKILL,1; >(Adds a 5% of chance to auto cast Level 5 Impositio Manus itself when using Sonic Blow skill.)<
+				bonus5 bAutoSpell,"PR_IMPOSITIO",5,50,BF_SHORT|BF_NORMAL|BF_SKILL,1; // >(Adds a 5% of chance to auto cast Level 5 Impositio Manus itself when using Sonic Blow skill.)<
 			}
 			break;
 		case 1827:
@@ -1019,11 +1019,11 @@ function	script	Glorius_Effect	{
 				bonus2 bMagicAddEle,Ele_Water,15;
 				bonus2 bMagicAddEle,Ele_Earth,15;
 				bonus2 bMagicAddEle,Ele_Wind,15;
-				bonus2 bMagicAtkEle_Shadow,15;
-				bonus2 bMagicAtkEle_Undead,15;
-				bonus2 bMagicAtkEle_Ghost,15;
-				bonus2 bMagicAtkEle_Poison,15;
-				bonus2 bMagicAtkEle_Holy,15;
+				bonus2 bMagicAtkEle,Ele_Shadow,15;
+				bonus2 bMagicAtkEle,Ele_Undead,15;
+				bonus2 bMagicAtkEle,Ele_Ghost,15;
+				bonus2 bMagicAtkEle,Ele_Poison,15;
+				bonus2 bMagicAtkEle,Ele_Holy,15;
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
 				bonus2 bIgnoreDefRaceRate,RC_Player,10;
 			}
@@ -1042,7 +1042,7 @@ function	script	Glorius_Effect	{
 			if(.@r>=7) {
 				bonus2 bLongAtkAddRace,RC_DemiHuman,20;
 				bonus2 bLongAtkAddRace,RC_Player,20;
-				autobonus2 "{ bonus bBaseAtk,50; }",50,3000,BF_SHORT|BF_LONG|BF_MAGIC,"{ specialeffect2 EF_ENHANCE; }"; (Has a chance to get buffed with ATK +50 for 5 seconds when using Finger Offensive skill.)
+				autobonus2 "{ bonus bBaseAtk,50; }",50,3000,BF_SHORT|BF_LONG|BF_MAGIC,"{ specialeffect2 EF_ENHANCE; }"; //(Has a chance to get buffed with ATK +50 for 5 seconds when using Finger Offensive skill.)
 				bonus2 bSkillAtk,"MO_FINGEROFFENSIVE",20;
 				bonus bMaxHPrate,3;
 				bonus bAspdRate,6;
@@ -1064,11 +1064,11 @@ function	script	Glorius_Effect	{
 				bonus2 bMagicAddEle,Ele_Water,15;
 				bonus2 bMagicAddEle,Ele_Earth,15;
 				bonus2 bMagicAddEle,Ele_Wind,15;
-				bonus2 bMagicAtkEle_Shadow,15;
-				bonus2 bMagicAtkEle_Undead,15;
-				bonus2 bMagicAtkEle_Ghost,15;
-				bonus2 bMagicAtkEle_Poison,15;
-				bonus2 bMagicAtkEle_Holy,15;
+				bonus2 bMagicAtkEle,Ele_Shadow,15;
+				bonus2 bMagicAtkEle,Ele_Undead,15;
+				bonus2 bMagicAtkEle,Ele_Ghost,15;
+				bonus2 bMagicAtkEle,Ele_Poison,15;
+				bonus2 bMagicAtkEle,Ele_Holy,15;
 			}
 			if(.@r>=10) {
 				bonus2 bCastrate,"MO_EXTREMITYFIST",-100;
@@ -1077,7 +1077,7 @@ function	script	Glorius_Effect	{
 				bonus bCastrate,-3;
 				bonus2 bSkillAtk,"MO_FINGEROFFENSIVE",10;
 				bonus bDelayRate,-5;
-				bonus5 bAutoSpell,"PR_IMPOSITIO",4,50,BF_SHORT|BF_NORMAL|BF_SKILL,1; >(Adds a 5% of chance to auto cast Level 4 Impositio Manus itself when using Finger Offensive skill.)<
+				bonus5 bAutoSpell,"PR_IMPOSITIO",4,50,BF_SHORT|BF_NORMAL|BF_SKILL,1; //>(Adds a 5% of chance to auto cast Level 4 Impositio Manus itself when using Finger Offensive skill.)<
 			}
 			break;
 		case 1426:
