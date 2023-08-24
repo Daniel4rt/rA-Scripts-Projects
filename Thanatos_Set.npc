@@ -1,6 +1,6 @@
-function	script	Valkyrie_Effect	{
+function	script	Thanatos_Effect	{
 	if(!getarg(0)) {
-		debugmes "Valkyrie_Effect: No se incluyo una ID para el efecto del item.";
+		debugmes "Thanatos_Effect: No se incluyo una ID para el efecto del item.";
 		end;
 	}
 	.@r = getrefine();
@@ -8,7 +8,7 @@ function	script	Valkyrie_Effect	{
 		// Error
 		case 0:
 		default:
-			debugmes "No posee script item ("+getarg(0)+"): Valkyrie_Effect ";
+			debugmes "No posee script item ("+getarg(0)+"): Thanatos_Effect ";
 			end;
 	}
 	return;

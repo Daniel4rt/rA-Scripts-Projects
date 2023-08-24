@@ -1,6 +1,6 @@
-function	script	Valkyrie_Effect	{
+function	script	Bradium_Effect	{
 	if(!getarg(0)) {
-		debugmes "Valkyrie_Effect: No se incluyo una ID para el efecto del item.";
+		debugmes "Bradium_Effect: No se incluyo una ID para el efecto del item.";
 		end;
 	}
 	.@r = getrefine();
@@ -8,7 +8,7 @@ function	script	Valkyrie_Effect	{
 		// Error
 		case 0:
 		default:
-			debugmes "No posee script item ("+getarg(0)+"): Valkyrie_Effect ";
+			debugmes "No posee script item ("+getarg(0)+"): Bradium_Effect ";
 			end;
 	}
 	return;
