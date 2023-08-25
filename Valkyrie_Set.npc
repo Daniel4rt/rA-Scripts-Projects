@@ -5,6 +5,175 @@ function	script	Valkyrie_Effect	{
 	}
 	.@r = getrefine();
 	switch (getarg(0)) {
+		case 5171: // Valkyrie Helm
+			bonus bMdef,10;
+		if(.@r>4) {
+			bonus bMatkRate,5;
+			bonus2 bSubRace,RC_DemiHuman,5;
+			bonus2 bSubRace,RC_Player,5;
+		}
+		if(.@r>6) {
+			bonus bAtkRate,5;
+			bonus2 bSubRace,RC_DemiHuman,5;
+			bonus2 bSubRace,RC_Player,5;
+		}
+		if(.@r>8) {
+			bonus bAtkRate,10;
+			bonus bMatkRate,10;
+			bonus2 bSubRace,RC_DemiHuman,5;
+			bonus2 bSubRace,RC_Player,5;
+		}
+
+		// Valkyrie's Set Effect
+		// No repetir el combo en otros objetos
+		if(	isequipped(2421) && //Valkyrie Shoes
+				isequipped(2115) && //Valkyrie Shield
+				isequipped(2524) &&	//Valkyrie Manteau
+				isequipped(2357)	 	//Valkyrie Armor
+			) {
+				bonus bAllStats,1;
+			}
+
+			break;
+		case 2421: // Valkyrie Shoes
+			bonus bUnbreakableShoes;
+			.@eac = eaclass();
+			if(	(.@eac&EAJ_BASEMASK) == EAJ_MAGE ||
+					(.@eac&EAJ_BASEMASK) == EAJ_ARCHER ||
+					(.@eac&EAJ_BASEMASK) == EAJ_ACOLYTE
+				) {
+					bonus bMaxHP,(12*BaseLevel);
+				} else
+			if(	(.@eac&EAJ_BASEMASK) == EAJ_SWORDMAN ||
+					(.@eac&EAJ_BASEMASK) == EAJ_MERCHANT ||
+					(.@eac&EAJ_BASEMASK) == EAJ_THIEF
+				) {
+					bonus bMaxSP,(5*JobLevel);
+				}
+
+			if(.@r>4) {
+				bonus bMatk,5;
+				bonus2 bMagicAddEle,Ele_All,5;
+			}
+			if(.@r>6) {
+				bonus bMatk,10;
+				bonus bSpeedAddRate,30;
+			}
+			if(.@r>8) {
+				bonus bMatk,15;
+				bonus bSkillAtk,"MG_FIREBOLT",25;
+				bonus bSkillAtk,"MG_COLDBOLT",25;
+				bonus bSkillAtk,"MG_LIGHTNINGBOLT",25;
+				bonus bSkillAtk,"WZ_EARTHSPIKE",25;
+			}
+			break;
+		case 2115:
+			bonus2 bSubEle,Ele_Water,20;
+			bonus2 bSubEle,Ele_Fire,20;
+			bonus2 bSubEle,Ele_Shadow,20;
+			bonus2 bSubEle,Ele_Undead,20;
+			bonus bMdef,5;
+
+			if(.@r>4) {
+				bonus bMdef,2;
+				bonus bHPrecovRate,10;
+				bonus bSPrecovRate,10;
+				bonus2 bSubEle,Ele_Holy,5;
+				bonus2 bSubEle,Ele_Ghost,5;
+				bonus2 bSubEle,Ele_Poison,5;
+				bonus2 bSubEle,Ele_Shadow,5;
+				bonus2 bSubEle,Ele_Undead,5;
+			}
+			if(.@r>6) {
+				bonus bMdef,3;
+				bonus bSpeedAddRate,5;
+				bonus2 bSubEle,Ele_Wind,5;
+				bonus2 bSubEle,Ele_Earth,5;
+				bonus2 bSubEle,Ele_Water,5;
+				bonus2 bSubEle,Ele_Fire,5;
+			}
+			if(.@r>8) {
+				bonus bMdef,5;
+				bonus bMaxHPrate,5;
+				bonus bMagicDamageReturn,15;
+			}
+
+			if(isequipped(1420)) {
+				bonus4 bAutoSpellWhenHit,"HP_ASSUMPTIO",2,5,0;
+			}
+
+			if(isequipped(5124) && isequipped(2353)) {
+				bonus bDef,2-(getequiprefinerycnt(EQI_HAND_L) + getequiprefinerycnt(EQI_HEAD_TOP));
+				bonus bMdef,5+(getequiprefinerycnt(EQI_HAND_L) + getequiprefinerycnt(EQI_HEAD_TOP));
+			}
+
+			break;
+		case 2524:
+			bonus bUnbreakableGarment;
+			.@eac = eaclass();
+			if(	(.@eac&EAJ_BASEMASK) == EAJ_MAGE ||
+					(.@eac&EAJ_BASEMASK) == EAJ_ARCHER ||
+					(.@eac&EAJ_BASEMASK) == EAJ_ACOLYTE
+				) {
+					bonus bFlee2,7+(.@r*2);
+				} else
+			if(	(.@eac&EAJ_BASEMASK) == EAJ_SWORDMAN ||
+					(.@eac&EAJ_BASEMASK) == EAJ_MERCHANT ||
+					(.@eac&EAJ_BASEMASK) == EAJ_THIEF
+				) {
+					bonus bShortWeaponDamageReturn,7+(.@r*2);
+				}
+
+			if(.@r>4) {
+				bonus bMdef,2;
+				autobonus2 "{ bonus bInt,5; bonus bMatkRate,10; }",rand(1000),3000,BF_MAGIC,"{ specialeffect2 EF_ENHANCE; }";
+			}
+			if(.@r>6) {
+				bonus bMdef,3;
+				bonus2 bMagicAtkEle,Ele_Water,5;
+				bonus2 bMagicAtkEle,Ele_Wind,5;
+				bonus2 bMagicAtkEle,Ele_Earth,5;
+				bonus2 bMagicAtkEle,Ele_Fire,5;
+			}
+			if(.@r>8) {
+				bonus bMdef,5;
+				bonus bShortWeaponDamageReturn,10;
+				bonus bMagicDamageReturn,10;
+			}
+			break;
+		case 2357:
+			bonus bAllStats,1;
+			bonus bMaxHPrate,5;
+			bonus bUnbreakableArmor;
+
+			if(	(.@eac&EAJ_BASEMASK) == EAJ_MAGE ||
+					(.@eac&EAJ_BASEMASK) == EAJ_ARCHER ||
+					(.@eac&EAJ_BASEMASK) == EAJ_ACOLYTE
+				) {
+					bonus2 bResEff,Eff_Silence,50;
+				} else
+			if(	(.@eac&EAJ_BASEMASK) == EAJ_SWORDMAN ||
+					(.@eac&EAJ_BASEMASK) == EAJ_MERCHANT ||
+					(.@eac&EAJ_BASEMASK) == EAJ_THIEF
+				) {
+					bonus bMaxHPrate,2;
+					bonus2 bSubRace,RC_DemiHuman,5;
+					bonus2 bSubRace,RC_Player,5;
+				}
+
+			if(.@r>4) {
+				bonus bMaxHP,500;
+				bonus bShortWeaponDamageReturn,5;
+			}
+			if(.@r>6) {
+				bonus bMaxHPrate,2;
+				bonus2 bSubRace,RC_DemiHuman,5;
+				bonus2 bSubRace,RC_Player,5;
+			}
+			if(.@r>8) {
+				bonus bMaxHPrate,3;
+				autobonus2 "{ bonus bAddRace,RC_All,10; }",rand(1000),3000,BF_NORMAL|BF_SKILL,"{ specialeffect2 EF_ENHANCE; }";
+			}
 		// Error
 		case 0:
 		default:

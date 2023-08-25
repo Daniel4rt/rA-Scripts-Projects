@@ -533,10 +533,10 @@ function	script	Glorius_Effect	{
 
 			// Glorious Mass-Production Set
 			if(isequipped(2446,2396)) {
-				bonus2 bMagicAddEle,Ele_Fire,10;
-				bonus2 bMagicAddEle,Ele_Water,10;
-				bonus2 bMagicAddEle,Ele_Earth,10;
-				bonus2 bMagicAddEle,Ele_Wind,10;
+				bonus2 bMagicAtkEle,Ele_Fire,10;
+				bonus2 bMagicAtkEle,Ele_Water,10;
+				bonus2 bMagicAtkEle,Ele_Earth,10;
+				bonus2 bMagicAtkEle,Ele_Wind,10;
 				bonus2 bMagicAtkEle,Ele_Shadow,10;
 				bonus2 bMagicAtkEle,Ele_Undead,10;
 				bonus2 bMagicAtkEle,Ele_Ghost,10;
@@ -599,17 +599,17 @@ function	script	Glorius_Effect	{
 				bonus bAtkRate,10;
 				bonus bMatkRate,10;
 				bonus bLongAtkRate,12;
-				bonus2 bMagicAddEle,Ele_Fire,5;
-				bonus2 bMagicAddEle,Ele_Water,5;
-				bonus2 bMagicAddEle,Ele_Earth,5;
-				bonus2 bMagicAddEle,Ele_Wind,5;
+				bonus2 bMagicAtkEle,Ele_Fire,5;
+				bonus2 bMagicAtkEle,Ele_Water,5;
+				bonus2 bMagicAtkEle,Ele_Earth,5;
+				bonus2 bMagicAtkEle,Ele_Wind,5;
 			}
 			break;
 		case 2773:
-			bonus2 bMagicAddEle,Ele_Fire,5;
-			bonus2 bMagicAddEle,Ele_Water,5;
-			bonus2 bMagicAddEle,Ele_Earth,5;
-			bonus2 bMagicAddEle,Ele_Wind,5;
+			bonus2 bMagicAtkEle,Ele_Fire,5;
+			bonus2 bMagicAtkEle,Ele_Water,5;
+			bonus2 bMagicAtkEle,Ele_Earth,5;
+			bonus2 bMagicAtkEle,Ele_Wind,5;
 			bonus bMaxHP,300;
 			bonus bCastrate,-5;
 			bonus bHealPower,5;
@@ -734,9 +734,9 @@ function	script	Glorius_Effect	{
 				autobonus "{ bonus2 bSkillAtk,\"NJ_HUUMA\",100; bonus2 bSkillAtk,\"NJ_ISSEN\",100; }",50,10000;
 				bonus3 bAddEff,Eff_Poison,500,ATF_MAGIC;
 				bonus4 bAutoSpellOnSkill,"NJ_ISSEN","NPC_CRITICALWOUND",3,50;
-				bonus2 bMagicAddEle,Ele_Fire,25;
-				bonus2 bMagicAddEle,Ele_Water,25;
-				bonus2 bMagicAddEle,Ele_Wind,25;
+				bonus2 bMagicAtkEle,Ele_Fire,25;
+				bonus2 bMagicAtkEle,Ele_Water,25;
+				bonus2 bMagicAtkEle,Ele_Wind,25;
 				bonus2 bMagicAtkEle,Ele_Shadow,25;
 				autobonus2 "{ bonus bBaseAtk,50; }",30,5000,BF_SHORT|BF_LONG|BF_MAGIC,"{ specialeffect2 EF_ENHANCE; }";
 			}
@@ -795,9 +795,9 @@ function	script	Glorius_Effect	{
 			bonus2 bSubEle,Ele_Neutral,5;
 			bonus5 bAutoSpellWhenHit,"AL_BLESSING",5,50,BF_WEAPON|BF_MAGIC,0;
 			if(isequipped(61000,61001)) {
-				bonus2 bMagicAddEle,Ele_Fire,25;
-				bonus2 bMagicAddEle,Ele_Water,25;
-				bonus2 bMagicAddEle,Ele_Wind,25;
+				bonus2 bMagicAtkEle,Ele_Fire,25;
+				bonus2 bMagicAtkEle,Ele_Water,25;
+				bonus2 bMagicAtkEle,Ele_Wind,25;
 				bonus2 bMagicAtkEle,Ele_Shadow,25;
 			}
 			break;
@@ -1015,10 +1015,10 @@ function	script	Glorius_Effect	{
 				bonus2 bSkillAtk,"MO_BALKYOUNG",50;
 				bonus2 bAddEle,Ele_Holy,50;
 				bonus2 bSkillAtk,"MO_FINGEROFFENSIVE",15;
-				bonus2 bMagicAddEle,Ele_Fire,15;
-				bonus2 bMagicAddEle,Ele_Water,15;
-				bonus2 bMagicAddEle,Ele_Earth,15;
-				bonus2 bMagicAddEle,Ele_Wind,15;
+				bonus2 bMagicAtkEle,Ele_Fire,15;
+				bonus2 bMagicAtkEle,Ele_Water,15;
+				bonus2 bMagicAtkEle,Ele_Earth,15;
+				bonus2 bMagicAtkEle,Ele_Wind,15;
 				bonus2 bMagicAtkEle,Ele_Shadow,15;
 				bonus2 bMagicAtkEle,Ele_Undead,15;
 				bonus2 bMagicAtkEle,Ele_Ghost,15;
@@ -1060,10 +1060,10 @@ function	script	Glorius_Effect	{
 				bonus bAspdRate,5;
 				bonus bCastrate,-2;
 				bonus2 bSkillAtk,"MO_FINGEROFFENSIVE",10;
-				bonus2 bMagicAddEle,Ele_Fire,15;
-				bonus2 bMagicAddEle,Ele_Water,15;
-				bonus2 bMagicAddEle,Ele_Earth,15;
-				bonus2 bMagicAddEle,Ele_Wind,15;
+				bonus2 bMagicAtkEle,Ele_Fire,15;
+				bonus2 bMagicAtkEle,Ele_Water,15;
+				bonus2 bMagicAtkEle,Ele_Earth,15;
+				bonus2 bMagicAtkEle,Ele_Wind,15;
 				bonus2 bMagicAtkEle,Ele_Shadow,15;
 				bonus2 bMagicAtkEle,Ele_Undead,15;
 				bonus2 bMagicAtkEle,Ele_Ghost,15;
