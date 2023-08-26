@@ -1,0 +1,18 @@
+// Item Combos Database
+//
+// Structure of Database:
+// ID:ID:ID:ID,{ Script }
+
+
+
+61000:61001:61002,{ bonus bMatkRate,10; bonus bLongAtkDef,10; bonus bAspdRate,5; bonus2 bResEff,Eff_Stun,3000; }
+61004:61005:61006,{ bonus bAtkRate,10; bonus bLongAtkDef,10; bonus bAspdRate,5; bonus2 bResEff,Eff_Stun,3000; }
+1774:1718,{ bonus bLongAtkRate,50; }
+1774:1726,{ bonus bLongAtkRate,50; }
+
+
+// Rework Items Glorius BG
+
+2394:2444:2549,{ bonus3 bAutoSpellWhenHit,"AL_INCAGI",3,10; bonus2 bSubRace,RC_DemiHuman,3; bonus2 bSubRace,RC_Player,2; bonus2 bResEff,Eff_Freeze,10000; bonus2 bSkillHeal2,"AM_POTIONPITCHER",8; bonus2 bSkillHeal2,"AL_HEAL",8; bonus2 bSkillHeal2,"PR_SANCTUARY",8; }
+2446:2396:2549,{ bonus2 bSubRace,RC_DemiHuman,3; bonus2 bSubRace,RC_Player,3; bonus2 bSubEle,Ele_Fire,-3; bonus2 bSubEle,Ele_Water,-3; bonus2 bSubEle,Ele_Earth,-3; bonus2 bSubEle,Ele_Wind,-3; bonus2 bSubEle,Ele_Shadow,-3; bonus2 bSubEle,Ele_Undead,-3; bonus2 bSubEle,Ele_Ghost,-3; bonus2 bSubEle,Ele_Holy,-3; bonus bBaseAtk,8; bonus bAtkRate,3; bonus bMatkRate,11; }
+2445:2395:2549,{ bonus bMaxHPRate,5; bonus bSPrecovRate,10; bonus bHPrecovRate,10; bonus2 bSubRace,RC_DemiHuman,2; bonus2 bSubRace,RC_Player,2; }

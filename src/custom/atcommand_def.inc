@@ -1,0 +1,31 @@
+// Copyright (c) rAthena Dev Teams - Licensed under GNU GPL
+// For more information, see LICENCE in the main folder
+
+/**
+ * Custom Atcommands
+ * Place the definition of custom atcommands in this file.
+ * Format:
+ *	ACMD_DEF(command_name),
+ **/
+
+//ACMD_DEF(newcommand),
+
+// Battleground Extended by Vykimo
+ACMD_DEF(bgstart),
+ACMD_DEF(bgend),
+ACMD_DEF(guildskill),
+ACMD_DEF(listenbg),
+ACMD_DEF(order),
+ACMD_DEF(leader),
+//ACMD_DEF(voteleader),
+ACMD_DEF(reportafk),
+ACMD_DEF2("votekick", reportafk),
+ACMD_DEF(partybuff), // [Vykimo]
+ACMD_DEF2("spb", partybuff), // [Vykimo]
+ACMD_DEF(norecall),
+ACMD_DEF2("nr",norecall),
+ACMD_DEF(hatereset),
+//ACMD_DEF(battleinfo),
+ACMD_DEF(packetfilter),
+ACMD_DEF(hideview),
+ACMD_DEF2("showview", hideview),
