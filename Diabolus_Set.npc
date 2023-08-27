@@ -62,7 +62,7 @@ function	script	Diabolus_Effect	{
 				bonus bMaxHpRate,5;
 				bonus bHPrecovRate,10;
 				bonus bSPrecovRate,10;
-				bonus2 bAtkRate,5;
+				bonus bAtkRate,5;
 				bonus2 bAddRace,RC_DemiHuman,5;
 				bonus2 bAddRace,RC_Player,5;
 			}
@@ -111,7 +111,7 @@ function	script	Diabolus_Effect	{
 			}
 			if(.@r > 6) {
 				bonus bFlee,3;
-				bonus bbaseatk,7;
+				bonus bBaseAtk,7;
 				bonus bAtkRate,4;
 				bonus2 bSubEle,Ele_Neutral,3;
 			}
@@ -151,7 +151,7 @@ function	script	Diabolus_Effect	{
 				bonus bMaxSPrate,5;
 				bonus bHPrecovRate,15;
 				bonus bSPrecovRate,15;
-				autobonus2 "{ bonus bDefEle,Ele_Ghost; }",100,3000,BF_WEAPON,"{ specialeffect2 EF_ENERGYCOAT;; }"
+				autobonus2 "{ bonus bDefEle,Ele_Ghost; }",100,3000,BF_WEAPON,"{ specialeffect2 EF_ENERGYCOAT; }";
 			}
 
 			if(isequipped(2729) && isequipped(2728)) {

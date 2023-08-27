@@ -61,10 +61,10 @@ function	script	Valkyrie_Effect	{
 			}
 			if(.@r>8) {
 				bonus bMatk,15;
-				bonus bSkillAtk,"MG_FIREBOLT",25;
-				bonus bSkillAtk,"MG_COLDBOLT",25;
-				bonus bSkillAtk,"MG_LIGHTNINGBOLT",25;
-				bonus bSkillAtk,"WZ_EARTHSPIKE",25;
+				bonus2 bSkillAtk,"MG_FIREBOLT",25;
+				bonus2 bSkillAtk,"MG_COLDBOLT",25;
+				bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",25;
+				bonus2 bSkillAtk,"WZ_EARTHSPIKE",25;
 			}
 			break;
 		case 2115:
