@@ -772,16 +772,6 @@ function	script	Glorius_Effect	{
 			bonus bShortWeaponDamageReturn,5;
 			bonus bLongAtkDef,5;
 			bonus5 bAutoSpellWhenHit,"AL_INCAGI",5,50,BF_WEAPON|BF_MAGIC,0;
-			if(isequipped(61000,61002)) {
-				bonus2 bSkillAtk,"NJ_KOUENKA",50;
-				bonus2 bSkillAtk,"NJ_KAENSIN",50;
-				bonus2 bSkillAtk,"NJ_BAKUENRYU",50;
-				bonus2 bSkillAtk,"NJ_HYOUSENSOU",50;
-				bonus2 bSkillAtk,"NJ_HYOUSYOURAKU",50;
-				bonus2 bSkillAtk,"NJ_HUUJIN",50;
-				bonus2 bSkillAtk,"NJ_RAIGEKISAI",50;
-				bonus2 bSkillAtk,"NJ_KAMAITACHI",50;
-			}
 			break;
 		case 61002: // Expert Ninja Boots
 			bonus bStr,5;

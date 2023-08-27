@@ -112,6 +112,23 @@
 5458,Pinwheel_Cap,Pinwheel Hat,4,20,,200,,2,,0,0xFFFFFFFF,7,2,256,,0,1,456,{ bonus bMaxHPrate,5; bonus bMaxSPrate,5; },{},{}
 2131,Magic_Study_Vol1,Magic Bible Vol1,4,20,,1000,,2,,1,0x00810204,3,2,32,,70,1,5,{ bonus bMdef,3; bonus bInt,2; bonus2 bAddEffWhenHit,Eff_Stun,1000; },{},{}
 
+// Valky Set Rework
+5171,Valkyrie_Helm,Valkyrie Helm,4,100000,,1000,,5,,1,0xFFFFFFFE,2,2,256,,0,1,225,{ callfunc "Valkyrie_Effect",5171; },{},{}
+2421,Valkyrie_Shoes,Valkyrian Shoes,4,0,,500,,4,,1,0xFFFFFFFE,2,2,64,,1,1,0,{ callfunc "Valkyrie_Effect",2421; },{},{}
+2115,Valkyrja's_Shield,Valkyrja's Shield,4,30000,,500,,3,,1,0xFFFFFFFE,7,2,32,,65,1,4,{ callfunc "Valkyrie_Effect",2115; },{},{}
+2357,Valkyrie_Armor,Valkyrian Armor,4,0,,2800,,6,,1,0xFFFFFFFE,2,2,16,,1,1,0,{ callfunc "Valkyrie_Effect",2357; },{},{}
+
+// Diabolus Set Rework
+5808,Diabolus_Helmet,Dark Bacilium,4,20,,250,,5,,1,0x000FDF80,2,2,769,,0,1,364,{ callfunc "Diabolus_Effect",5808; },{},{}
+2375,Diabolus_Armor,Diabolus Armor,4,20,,600,,7,,1,0x000654E2,2,2,16,,55,1,0,{ callfunc "Diabolus_Effect",2375; },{},{}
+2433,Diabolus_Boots,Diabolus Boots,4,20,,250,,4,,1,0x00CFFF80,2,2,64,,0,1,0,{ callfunc "Diabolus_Effect",2433; },{},{}
+2537,Diabolus_Manteau,Diabolus Manteau,4,20,,250,,5,,1,0x00CFFF80,2,2,4,,0,1,0,{ callfunc "Diabolus_Effect",2537; },{},{}
+2374,Diabolus_Robe,Diabolus Robe,4,20,,300,,6,,1,0x00098B1C,2,2,16,,55,1,0,{ callfunc "Diabolus_Effect",2374; },{},{}
+2729,Diabolus_Ring,Diabolus Ring,4,20,,50,,0,,1,0x00CFFF80,2,2,136,,0,0,0,{ callfunc "Diabolus_Effect",2729; },{},{}
+2728,Cursed_Hand,Cursed Hand,4,20,,50,,0,,1,0xFFFFFFFE,7,2,136,,80,0,0,{ callfunc "Diabolus_Effect",2728; },{},{}
+2536,Skin_Of_Ventus,Skin of Ventus,4,20,,250,,2,,1,0xFFFFFFFE,7,2,4,,60,1,0,{ bcallfunc "Diabolus_Effect",2536; },{},{}
+2130,Cross_Shield,Cross Shield,4,20,,2000,,6,,1,0x00004000,7,2,32,,80,1,4,{ callfunc "Diabolus_Effect",2130; },{},{}
+
 
 //Fix
 //12548,Buy_Market_Permit2,Shabby Purchase Street Stall License,2,500,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ getmapxy(.@map$,.@x,.@y,BL_PC); if(checkcell(.@map$,.@x,.@y,cell_novending)){buyingstore 2;} else {dispbottom "This item can only be used in merchant zone. "+checkcell(.@map$,.@x,.@y,cell_novending)+""; getitem 12548,1;} },{},{}
@@ -413,7 +430,7 @@
 
 ///////////////////////////////////////CUSTOMS DE OLDTIMES RO/////////////////////////////////
 //Customs Old Times RO
-// LEYENDA 
+// LEYENDA
 //2^10 1024 = Costume - Upper Headgear
 //2^11 2048 = Costume - Middle Headgear
 //2^12 4096 = Costume - Lower Headgear
@@ -489,7 +506,7 @@
 35657,Red_Mistress_Crown,Red_Mistress_Crown,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4206,{},{},{}
 35658,White_Mistress_Crown,White_Mistress_Crown,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4207,{},{},{}
 
-//35659 -> Libre 
+//35659 -> Libre
 
 35660,Black_Binoculars,Black_Binoculars,4,20,,200,,1,,0,0x00080808,7,2,2048,,50,0,4208,{},{},{}
 35661,White_Binoculars,White_Binoculars,4,20,,200,,1,,0,0x00080808,7,2,2048,,50,0,4209,{},{},{}
@@ -517,19 +534,19 @@
 
 35201,Angel_Wing_Ears,Angel Wing Ears,4,20,,200,,0,,0,0xFFFFFFFF,7,2,2048,,0,0,4550,{},{},{}
 35202,Blinker_,Blinker_,4,20,,200,,0,,0,0xFFFFFFFF,7,2,2048,,0,0,4551,{},{},{}
-35203,Bone_Helm__,Bone Helm,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4552,{},{},{} 
+35203,Bone_Helm__,Bone Helm,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4552,{},{},{}
 35204,Bone_Mask,Bone Mask,4,20,,200,,0,,0,0xFFFFFFFF,7,2,2048,,0,0,4553,{},{},{}
 35205,Crunch_Toast,Crunch Toast,4,20,,200,,0,,0,0xFFFFFFFF,7,2,4096,,0,0,4554,{},{},{}
 35206,Evil_Wing_Ears,Evil Wing Ears,4,20,,200,,0,,0,0xFFFFFFFF,7,2,2048,,0,0,4555,{},{},{}
-35207,Fashionable_Glasses_,Fashionable Glasses,4,20,,200,,0,,0,0xFFFFFFFF,7,2,2048,,0,0,4556,{},{},{} 
+35207,Fashionable_Glasses_,Fashionable Glasses,4,20,,200,,0,,0,0xFFFFFFFF,7,2,2048,,0,0,4556,{},{},{}
 35208,Flapping_Angel_Wing,Flapping Angel Wing,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4557,{},{},{}
 35209,Gangster_Scarf,Gangster Scarf,4,20,,200,,0,,0,0xFFFFFFFF,7,2,4096,,0,0,4558,{},{},{}
 35210,Phreeoni_Hat,Phreeoni Hat,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4559,{},{},{}
 35211,Large_Baphomet_Horns,Large Baphomet Horns,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4560,{},{},{}
 35212,Luffy_Hat,Luffy Hat,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4561,{},{},{}
-35213,Lunatic_Hat_,Lunatic Hat,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4562,{},{},{} 
+35213,Lunatic_Hat_,Lunatic Hat,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4562,{},{},{}
 35214,Mage_Hat,Mage Hat,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4563,{},{},{}
-35215,Smoking_Pipe__,Smoking Pipe,4,20,,200,,0,,0,0xFFFFFFFF,7,2,4096,,0,0,4564,{},{},{} 
+35215,Smoking_Pipe__,Smoking Pipe,4,20,,200,,0,,0,0xFFFFFFFF,7,2,4096,,0,0,4564,{},{},{}
 35216,Wandering_Wolf_Hat,Wandering Wolf Hat,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1024,,0,0,4565,{},{},{}
 
 35217,Black_Angel_Wing_Ears,Black Angel Wing Ears,4,20,,200,,0,,0,0xFFFFFFFF,7,2,2048,,0,0,4566,{},{},{}
