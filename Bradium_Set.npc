@@ -10,7 +10,7 @@ function	script	Bradium_Effect	{
 			bonus bAllStats,1;
 			bonus bCritical,10;
 			bonus bMdef,1;
-			autobonus "{ bonus bAspdRate,5; }",300,3000,BF_SHORT,"{ specialeffect2 EF_POTION_BERSERK; }";
+			autobonus "{ bonus bAspdRate,5; }",300,3000,BF_SHORT,"{ specialeffect2 EF_WIND; }";
 			bonus bLongAtkRate,3;
 			break;
 		case 2788:
@@ -20,6 +20,13 @@ function	script	Bradium_Effect	{
 			bonus bMdef,2;
 			autobonus "{ bonus bCastrate,-3; }",300,3000,BF_MAGIC,"{ specialeffect2 EF_SUFFRAGIUM;  }";
 			bonus bMatkRate,3;
+			break;
+		case 2789:
+			bonus bBaseAtk,10;
+			bonus bAllStats,1;
+			bonus bAtkRate,8;
+			bonus bDef,1;
+			autobonus "{ bonus bAtkRate,5; }",300,3000,BF_SHORT,"{ specialeffect2 EF_POTION_BERSERK; }";
 			break;
 		case 2138:
 			bonus2 bSkillAtk,"CR_SHIELDBOOMERANG",50;
