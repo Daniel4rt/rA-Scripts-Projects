@@ -2809,7 +2809,7 @@ int status_calc_mob_(struct mob_data* md, enum e_status_calc_opt opt)
 	if (battle_config.mobs_level_up && md->level > md->db->lv)
 		flag|=1;
 
-	if (md->special_state.size)
+	if (md->special_state.size && !md->option.max_hp)
 		flag|=2;
 
 	if (md->guardian_data && md->guardian_data->guardup_lv)
@@ -2825,6 +2825,12 @@ int status_calc_mob_(struct mob_data* md, enum e_status_calc_opt opt)
 
 	if (md->master_id && battle_config.slaves_inherit_mode)
 		flag |= 32;
+
+	if (md->option.max_hp)
+		flag |= 64;
+
+	if (md->option.element)
+		flag |= 128;
 
 	if (!flag) { // No special status required.
 		if (md->base_status) {
@@ -2856,6 +2862,14 @@ int status_calc_mob_(struct mob_data* md, enum e_status_calc_opt opt)
 
 	if (flag&32)
 		status_calc_slave_mode(md, map_id2md(md->master_id));
+
+	if (flag&64)
+		status->max_hp = status->hp = md->option.max_hp;
+
+	if (flag&128) {
+		status->def_ele = md->option.element;
+		status->ele_lv = md->option.element_lv;
+	}
 
 	if (flag&1) { // Increase from mobs leveling up [Valaris]
 		int diff = md->level - md->db->lv;
@@ -7649,6 +7663,8 @@ int status_get_party_id(struct block_list *bl)
 			break;
 		case BL_MOB: {
 				struct mob_data *md=(TBL_MOB*)bl;
+				if( md->option.is_event && map_flag_vs(bl->m) && md->option.party_id )
+					return md->option.party_id;
 				if( md->master_id > 0 ) {
 					struct map_session_data *msd;
 					if (md->special_state.ai && (msd = map_id2sd(md->master_id)) != NULL)
@@ -7700,6 +7716,10 @@ int status_get_guild_id(struct block_list *bl)
 					return md->guardian_data->guild_id;
 				if (md->special_state.ai && (msd = map_id2sd(md->master_id)) != NULL)
 					return msd->status.guild_id; // Alchemist's mobs [Skotlex]
+				if (md->option.is_event && map_getmapflag(bl->m, MF_GVG))
+					return md->option.guild_id;
+				if (md->option.is_war && !map_flag_vs(bl->m))
+					return md->option.guild_id;
 			}
 			break;
 		case BL_HOM:
@@ -7745,6 +7765,8 @@ int status_get_emblem_id(struct block_list *bl)
 			{
 				struct map_session_data *msd;
 				struct mob_data *md = (struct mob_data *)bl;
+				if (md->option.is_war && md->option.guild_id)
+					return md->option.guild_emblem_id;
 				if (md->guardian_data)	// Guardian's guild [Skotlex]
 					return md->guardian_data->emblem_id;
 				if (md->special_state.ai && (msd = map_id2sd(md->master_id)) != NULL)

@@ -220,6 +220,17 @@ struct mob_data {
 	int areanpc_id; //Required in OnTouchNPC (to avoid multiple area touchs)
 	unsigned int bg_id; // BattleGround System
 
+	// mob_smob_sub
+	struct {
+		bool is_event, no_expdrop, no_slaves, announce_killer, announce_hprate, is_war, drop_boost;
+		unsigned hp_show : 3;
+		unsigned int max_hp;
+		unsigned allow_warp : 2;
+		unsigned ai_type : 3;
+		int party_id, guild_id, guild_emblem_id, faction_id;
+		short item_drop, item_amount, exp_boost, element, element_lv;
+	} option;
+
 	t_tick next_walktime,last_thinktime,last_linktime,last_pcneartime,dmgtick;
 	short move_fail_count;
 	short lootitem_count;
@@ -241,7 +252,7 @@ struct mob_data {
 	 * MvP Tombstone NPC ID
 	 **/
 	int tomb_nid;
-	
+
 	struct s_tomb_dmg {
 		int damage;
 		const char* char_name;
@@ -313,6 +324,10 @@ int mobdb_checkid(const int id);
 struct view_data* mob_get_viewdata(int mob_id);
 void mob_set_dynamic_viewdata( struct mob_data* md );
 void mob_free_dynamic_viewdata( struct mob_data* md );
+
+// Special Mob [DanielArt]
+int mob_sub_smob(struct map_session_data *sd, const char *mapname, short x, short y, const char *mobname, int class_, int amount, const char *event, int hp_mod, short size, short ai_type, bool no_slaves, short allow_warp, short hp_show, bool announce_hprate, bool announce_killer, bool no_expdrop, int TeamID, short item_drop, short item_amount, bool is_war, short exp_boost, bool drop_boost, short element, short element_lv);
+void mob_smob_hp(struct mob_data *md, int damage);
 
 struct mob_data *mob_once_spawn_sub(struct block_list *bl, int16 m, int16 x, int16 y, const char *mobname, int mob_id, const char *event, unsigned int size, enum mob_ai ai);
 

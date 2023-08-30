@@ -557,7 +557,7 @@ ACMD_FUNC(bgranking)
 		clif_displaymessage(fd, atcmd_output);
 	}
 	clif_displaymessage(fd, "================== MY POINTS ===================");
-	
+
 	sprintf(atcmd_output,"MY POINTS : %d", sd->status.bgstats.points);
 	clif_displaymessage(fd, atcmd_output);
 	clif_displaymessage(fd, "============= BATTLEGROUND FAME LIST =============");
@@ -684,7 +684,7 @@ ACMD_FUNC(jump)
  *------------------------------------------*/
 ACMD_FUNC(who) {
 	struct map_session_data *pl_sd = NULL;
-	struct s_mapiterator *iter = NULL;	
+	struct s_mapiterator *iter = NULL;
 	char player_name[NAME_LENGTH] = "";
 	int count = 0;
 	int level = 0;
@@ -2685,7 +2685,7 @@ ACMD_FUNC(stat_all)
 			max_status[5] = pc_maxparameter(sd,PARAM_LUK);
 		}
 	}
-	
+
 	count = 0;
 	for (i = 0; i < ARRAYLENGTH(status); i++) {
 		short new_value;
@@ -3027,7 +3027,7 @@ ACMD_FUNC(char_ban)
 		clif_displaymessage(fd, msg_txt(sd,702)); // Time parameter format is +/-<value> to alter. y/a = Year, m = Month, d/j = Day, h = Hour, n/mn = Minute, s = Second.
 		return -1;
 	}
-	
+
 	if( timediff < 0 && (
 		   (bantype == CHRIF_OP_LOGIN_BAN && !pc_can_use_command(sd, "unban", COMMAND_ATCOMMAND))
 		|| (bantype == CHRIF_OP_BAN && !pc_can_use_command(sd, "charunban", COMMAND_ATCOMMAND))
@@ -3946,7 +3946,7 @@ ACMD_FUNC(reload) {
 			pc_close_npc(pl_sd,1);
 			clif_cutin(pl_sd, "", 255);
 			pl_sd->state.block_action &= ~(PCBLOCK_ALL ^ PCBLOCK_IMMUNE);
-			
+
 			if(pl_sd->qd)
 				queue_member_remove(pl_sd->qd,pl_sd->bl.id);
 		}
@@ -4661,7 +4661,7 @@ ACMD_FUNC(loadnpc)
 		clif_displaymessage(fd, msg_txt(sd,1132)); // Please enter a script file name (usage: @loadnpc <file name>).
 		return -1;
 	}
-	
+
 	if (!npc_addsrcfile(message, true)) {
 		clif_displaymessage(fd, msg_txt(sd,261)); // Script could not be loaded.
 		return -1;
@@ -4932,7 +4932,7 @@ ACMD_FUNC(jailfor) {
 	nullpo_retr(-1, sd);
 
 	memset(atcmd_output, '\0', sizeof(atcmd_output));
-	
+
 	if (!message || !*message || sscanf(message, "%255s %23[^\n]",atcmd_output,atcmd_player_name) < 2) {
 		clif_displaymessage(fd, msg_txt(sd,400));	//Usage: @jailfor <time> <character name>
 		return -1;
@@ -5123,7 +5123,7 @@ ACMD_FUNC(disguiseguild)
 {
 	int id = 0, i;
 	char monster[NAME_LENGTH], guild[NAME_LENGTH];
-	
+
 	struct guild *g;
 
 	memset(monster, '\0', sizeof(monster));
@@ -5445,7 +5445,7 @@ ACMD_FUNC(npcmove)
 		return -1;
 	}
 
-	if ( npc_movenpc( nd, x, y ) ) 
+	if ( npc_movenpc( nd, x, y ) )
 	{ //actually failed to move
 		clif_displaymessage(fd, msg_txt(sd,1154)); // NPC is not on this map.
 		return -1;	//Not on a map.
@@ -5540,7 +5540,7 @@ ACMD_FUNC(dropall)
 	struct item_data *item_data = NULL;
 
 	nullpo_retr(-1, sd);
-	
+
 	if( message[0] ) {
 		type = atoi(message);
 		if( type != -1 && type != IT_HEALING && type != IT_USABLE && type != IT_ETC && type != IT_WEAPON &&
@@ -5575,7 +5575,7 @@ ACMD_FUNC(dropall)
 		}
 	}
 	sprintf(atcmd_output, msg_txt(sd,1494), count,count2); // %d items are dropped (%d skipped)!
-	clif_displaymessage(fd, atcmd_output); 
+	clif_displaymessage(fd, atcmd_output);
 	return 0;
 }
 
@@ -7006,7 +7006,7 @@ ACMD_FUNC(uptime)
 }
 
 /*==========================================
- * @changesex 
+ * @changesex
  * => Changes one's account sex. Switch from male to female or visversa
  *------------------------------------------*/
 ACMD_FUNC(changesex)
@@ -7897,7 +7897,7 @@ ACMD_FUNC(whereis)
 		clif_displaymessage(fd, msg_txt(sd,1288)); // Please enter a monster name/ID (usage: @whereis <monster_name_or_monster_ID>).
 		return -1;
 	}
-	
+
 	int i_message = atoi(message);
 	if (mobdb_checkid(i_message)) {
 		// ID given
@@ -7907,7 +7907,7 @@ ACMD_FUNC(whereis)
 		// Name given, get all monster associated whith this name
 		count = mobdb_searchname_array(message, mob_ids, MAX_SEARCH);
 	}
-	
+
 	if (count <= 0) {
 		clif_displaymessage(fd, msg_txt(sd,40)); // Invalid monster ID or name.
 		return -1;
@@ -7925,7 +7925,7 @@ ACMD_FUNC(whereis)
 
 		snprintf(atcmd_output, sizeof atcmd_output, msg_txt(sd,1289), mob->jname); // %s spawns in:
 		clif_displaymessage(fd, atcmd_output);
-		
+
 		const std::vector<spawn_info> spawns = mob_get_spawns(mob_id);
 		if (spawns.size() <= 0) {
 			 // This monster does not spawn normally.
@@ -9187,7 +9187,7 @@ static void atcommand_commands_sub(struct map_session_data* sd, const int fd, At
 		if ( count_bind )
 			clif_displaymessage(fd,line_buff);// last one
 		count += count_bind;
-		
+
 	}
 
 	sprintf(atcmd_output, msg_txt(sd,274), count); // "%d commands found."
@@ -9249,7 +9249,7 @@ ACMD_FUNC(accinfo) {
 
 /**
  * @set <variable name{[index]}>{ <value>}
- * 
+ *
  * Gets or sets a value of a non server variable.
  * If a value is specified it is used to set the variable's value,
  * if not the variable's value is read.
@@ -9700,11 +9700,11 @@ ACMD_FUNC(vip) {
 	char * modif_p;
 	int32 vipdifftime = 0;
 	time_t now=time(NULL);
-	
+
 	nullpo_retr(-1, sd);
 
 	memset(atcmd_output, '\0', sizeof(atcmd_output));
-	
+
 	if (!message || !*message || sscanf(message, "%255s %23[^\n]",atcmd_output,atcmd_player_name) < 2) {
 		clif_displaymessage(fd, msg_txt(sd,700));	//Usage: @vip <timef> <character name>
 		return -1;
@@ -9731,14 +9731,14 @@ ACMD_FUNC(vip) {
 	}
 	if(pl_sd->vip.time==0) pl_sd->vip.time=now;
 	pl_sd->vip.time += vipdifftime; //increase or reduce VIP duration
-	
+
 	if (pl_sd->vip.time <= now) {
 		clif_displaymessage(pl_sd->fd, msg_txt(pl_sd,703)); // GM has removed your VIP time.
 		clif_displaymessage(fd, msg_txt(sd,704)); // Player is no longer VIP.
 	} else {
 		int year,month,day,hour,minute,second;
 		char timestr[21];
-		
+
 		split_time((int)(pl_sd->vip.time-now),&year,&month,&day,&hour,&minute,&second);
 		sprintf(atcmd_output,msg_txt(pl_sd,705),year,month,day,hour,minute); // Your VIP status is valid for %d years, %d months, %d days, %d hours and %d minutes.
 		clif_displaymessage(pl_sd->fd,atcmd_output);
@@ -9753,7 +9753,7 @@ ACMD_FUNC(vip) {
 			clif_displaymessage(fd,atcmd_output);
 		}
 	}
-	chrif_req_login_operation(pl_sd->status.account_id, pl_sd->status.name, CHRIF_OP_LOGIN_VIP, vipdifftime, 7, 0); 
+	chrif_req_login_operation(pl_sd->status.account_id, pl_sd->status.name, CHRIF_OP_LOGIN_VIP, vipdifftime, 7, 0);
 	return 0;
 }
 
@@ -9775,7 +9775,7 @@ ACMD_FUNC(showrate) {
 ACMD_FUNC(fullstrip) {
 	int i;
 	TBL_PC *tsd;
-	
+
 	nullpo_retr(-1,sd);
 
 	memset(atcmd_player_name, '\0', sizeof(atcmd_player_name));
@@ -9789,7 +9789,7 @@ ACMD_FUNC(fullstrip) {
 		clif_displaymessage(fd, msg_txt(sd,3)); // Character not found.
 		return -1;
 	}
-	
+
 	for( i = 0; i < EQI_MAX; i++ ) {
 		if( tsd->equip_index[ i ] >= 0 )
 			pc_unequipitem( tsd , tsd->equip_index[ i ] , 2 );
@@ -10177,7 +10177,7 @@ ACMD_FUNC(gepard_block_nick)
 		return -1;
 	}
 
-	strftime(unban_time_str, sizeof(unban_time_str), "%Y-%m-%d %H:%M:%S", localtime(&time_server)); 
+	strftime(unban_time_str, sizeof(unban_time_str), "%Y-%m-%d %H:%M:%S", localtime(&time_server));
 
 	sprintf(atcmd_output, "Request: block by name - %s", violator_name);
 	clif_displaymessage(fd, atcmd_output);
@@ -10247,7 +10247,7 @@ ACMD_FUNC(gepard_block_account_id)
 		return -1;
 	}
 
-	strftime(unban_time_str, sizeof(unban_time_str), "%Y-%m-%d %H:%M:%S", localtime(&time_server)); 
+	strftime(unban_time_str, sizeof(unban_time_str), "%Y-%m-%d %H:%M:%S", localtime(&time_server));
 
 	sprintf(atcmd_output, "Request: block by account ID: %u", violator_account_id);
 	clif_displaymessage(fd, atcmd_output);
@@ -10311,7 +10311,7 @@ ACMD_FUNC(gepard_block_unique_id)
 		return -1;
 	}
 
-	strftime(unban_time_str, sizeof(unban_time_str), "%Y-%m-%d %H:%M:%S", localtime(&time_server)); 
+	strftime(unban_time_str, sizeof(unban_time_str), "%Y-%m-%d %H:%M:%S", localtime(&time_server));
 
 	sprintf(atcmd_output, "Request: block by unqiue ID: %u", violator_unique_id);
 	clif_displaymessage(fd, atcmd_output);
@@ -10433,13 +10433,147 @@ ACMD_FUNC(colornick)
 	}
 
 	pc_setglobalreg(sd, add_str("CN_GROUP_ID"), sd->color_nicks_group_id);
-	
+
 	clif_send_colornicks(sd);
 
 	return 0;
 }
 
 // (^~_~^) Color Nicks End
+
+/**
+ * Dropea objetos en un área del suelo
+ * @author DanielArt
+**/
+ACMD_FUNC(flooritem)
+{
+	nullpo_retr(-1, sd);
+	int nameid, amount;
+
+	if(!message || !*message || (sscanf(message, "%d %d",&nameid, &amount) < 1)) {
+		clif_displaymessage(fd, "@flooritem <id> <cantidad>");
+		return -1;
+	}
+
+	std::shared_ptr<item_data> item_data = item_db.find(nameid);
+
+	if( item_data == nullptr ) {
+		clif_displaymessage(fd, "@flooritem - error");
+		clif_displaymessage(fd, "El objeto ingresado no existe en la base de datos.");
+		return -1;
+	}
+
+	if( amount <= 0 ) {
+		clif_displaymessage(fd, "@flooritem <id> <cantidad>");
+		return -1;
+	}
+
+	map_addflooritem_area(&sd->bl, 0, 0, 0, nameid, amount);
+	return 0;
+}
+
+ACMD_FUNC(smob)
+{
+	char name[NAME_LENGTH];
+	int count,range,x = 0,size = 0,y = 0,number = 1,mobhp = 0,summon = 0,spawn = 0,anunciomuerte = 0,hpm = 0,canusewarps = 0,ai = 0,anunciohp = 0,noexp = 1,itemid = 0,amount = 0;
+	short mx, my;
+	uint16 i, k;
+	uint16 mob_id;
+	struct mob_data *md;
+	nullpo_retr(-1, sd);
+
+	memset(name, '\0', sizeof(name));
+
+	if(!message || !*message || (sscanf(message, "%23s %d %d %d %d %d %d %d %d %d %d %d %d",name,&number,&mobhp,&itemid,&amount,&size,&ai,&spawn,&summon,&canusewarps,&anunciohp,&anunciomuerte,&noexp) < 1)) {
+		clif_displaymessage(fd, "-----------------------------------------------------------------------");
+		clif_displaymessage(fd, "@smob <\"nombre\"/id> <cantidad> <Max.HP>...");
+		clif_displaymessage(fd, "<Item ID> | ID del objeto a dropear.");
+		clif_displaymessage(fd, "<Item Cantidad> | cantidad del objeto anterior.");
+		clif_displaymessage(fd, "<tamaño> | 0 : mediano,");
+		clif_displaymessage(fd, "..............| 1 : pequeño,");
+		clif_displaymessage(fd, "..............| 2 : grande.");
+		clif_displaymessage(fd, "<ai> | 0 : monstruo normal,");
+		clif_displaymessage(fd, "..........| 1 : aliado / enemigo vs mob tipo 0 y 2,");
+		clif_displaymessage(fd, "..........| 2 : PC y MOB tipo 1 enemigo (Agresivo).");
+		clif_displaymessage(fd, "<ubicacion> | 0 : azar,");
+		clif_displaymessage(fd, ".................| 1 : actual,");
+		clif_displaymessage(fd, "<convocar?> | 0 : Permitir.");
+		clif_displaymessage(fd, ".................| 1 : Denegar");
+		clif_displaymessage(fd, "<warps> | 0 : no puede usar,");
+		clif_displaymessage(fd, ".............| 1 : puede usar,");
+		clif_displaymessage(fd, ".............| 2 : y warp.");
+		clif_displaymessage(fd, "<AnuncioHP?> | 0 : desactivado,");
+		clif_displaymessage(fd, "..................| 1 : cada 10% de HP.");
+		clif_displaymessage(fd, "<AnuncioDie?> | 0 : desactivado,");
+		clif_displaymessage(fd, "...................| 1 : anunciar quien ha matado al mob.");
+		clif_displaymessage(fd, "<NoExpJob?> | 0 : desactivado,");
+		clif_displaymessage(fd, "............| 1 : El monstruo no dara Exp Base ni Exp Job.");
+		clif_displaymessage(fd, "-----------------------------------------------------------------------");
+		return -1;
+	}
+
+	if ((mob_id = mobdb_searchname(name)) == 0) // check name first (to avoid possible name begining by a number)
+		mob_id = mobdb_checkid(atoi(name));
+
+	if (mob_id == 0) {
+		clif_displaymessage(fd, msg_txt(sd,40)); // Invalid monster ID or name.
+		return -1;
+	}
+
+	if (mob_id == MOBID_EMPERIUM) {
+		clif_displaymessage(fd, msg_txt(sd,83)); // Monster 'Emperium' cannot be spawned.
+		return -1;
+	}
+	if( battle_config.atc_spawn_quantity_limit >= 1 && number > battle_config.atc_spawn_quantity_limit )
+		number = battle_config.atc_spawn_quantity_limit;
+	mobhp = cap_value(mobhp,0,MAX_MOB_HP);
+	size = cap_value(size,0,2);
+	ai = cap_value(ai,0,3);
+	spawn = cap_value(spawn,0,1);
+	summon = cap_value(summon,0,1);
+	canusewarps = cap_value(canusewarps,0,2);
+	hpm = cap_value(hpm,0,3);
+	anunciohp = cap_value(anunciohp,0,1);
+	anunciomuerte = cap_value(anunciomuerte,0,1);
+	noexp = cap_value(noexp,0,1);
+	if( itemid > 0 ) {
+		if( !itemdb_exists(itemid) ) {
+			clif_displaymessage(fd, msg_txt(sd,19));
+			return -1;
+		} else
+			amount = cap_value(amount,1,MAX_ITEM_DROP_AREA);
+	} else
+		amount = 0;
+	count = 0;
+	range = (int)sqrt((float)number) +2;
+	range = range * 2 + 5;
+	if( spawn ) {
+		mx = sd->bl.x;
+		my = sd->bl.y;
+	}
+	for( i = 0; i < number; i++ ) {
+		if( !spawn )
+			map_search_freecell(&sd->bl, 0, &mx, &my, range, range, 0);
+		k = mob_sub_smob(sd, "this", mx, my, "--ja--", mob_id, 1, "", mobhp, size, ai, summon, canusewarps, hpm, anunciohp, anunciomuerte, noexp, 0, itemid, amount, false, 0, 0, 0, 0);
+		if(!k) {
+			clif_displaymessage(fd, "Un error ha ocurrido ejecutando smob." );
+			return -1;
+		} else
+			count++;
+	}
+	if( count != 0 )
+		if( number == count )
+			clif_displaymessage(fd, msg_txt(sd,39));
+		else {
+			sprintf(atcmd_output, msg_txt(sd,240), count);
+			clif_displaymessage(fd, atcmd_output);
+		}
+	else {
+		clif_displaymessage(fd, msg_txt(sd,40));
+		return -1;
+	}
+	return 0;
+}
 
 #include "../custom/atcommand.inc"
 
@@ -10762,6 +10896,8 @@ void atcommand_basecommands(void) {
 		ACMD_DEFR(changedress, ATCMD_NOCONSOLE|ATCMD_NOAUTOTRADE),
 		ACMD_DEFR(camerainfo, ATCMD_NOCONSOLE|ATCMD_NOAUTOTRADE),
 		ACMD_DEFR(resurrect, ATCMD_NOCONSOLE),
+		ACMD_DEF(flooritem), //[DanielArt]
+		ACMD_DEF(smob), // [DanielArt]
 	};
 	AtCommandInfo* atcommand;
 	int i;
