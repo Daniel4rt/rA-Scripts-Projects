@@ -5,6 +5,93 @@ function	script	Thanatos_Effect	{
 	}
 	.@r = getrefine();
 	switch (getarg(0)) {
+		case 2354:
+			bonus bVit,2;
+			bonus bMaxHPrate,10;
+			if(.@r > 4) {
+				bonus bHPrecovRate,10;
+				bonus bSPrecovRate,10;
+				bonus bVit,3;
+			}
+			if(.@r > 6) {
+				bonus bMaxHpRate,5;
+				bonus bMaxSPrate,5;
+			}
+			if(.@r > 8) {
+				bonus2 bAddRace,RC_DemiHuman,5;
+				bonus2 bAddRace,RC_Player,5;
+			}
+			break;
+		case 2419:
+			bonus bMdef,3;
+			bonus bMaxHpRate,5;
+			bonus bMaxSPrate,5;
+			if(.@r > 4) {
+				bonus bHPrecovRate,10;
+				bonus bSPrecovRate,10;
+				bonus bMdef,2;
+			}
+			if(.@r > 6) {
+				bonus bMaxHpRate,5;
+				bonus bMaxSPrate,5;
+			}
+			if(.@r > 8) {
+				bonus2 bSubEle,Ele_Water,5;
+				bonus2 bSubEle,Ele_Wind,5;
+				bonus2 bSubEle,Ele_Earth,5;
+				bonus2 bSubEle,Ele_Fire,5;
+			}
+			break;
+		case 5128:
+			bonus bVit,3;
+			bonus bMdef,3;
+
+			if(isequipped(2520) && isequipped(2419) && isequipped(2354)) {
+				bonus bVit,5;
+				bonus bMaxHpRate,15;
+				bonus bMaxSPrate,5;
+				bonus bDef,5;
+				bonus bMdef,15;
+				bonus2 bSubEle,Ele_Water,10;
+				bonus2 bSubEle,Ele_Wind,10;
+				bonus2 bSubEle,Ele_Earth,10;
+				bonus2 bSubEle,Ele_Fire,10;
+			}
+
+			if(.@r > 4) {
+				bonus bHPrecovRate,10;
+				bonus bSPRegenRate,10;
+				bonus bVit,2;
+			}
+			if(.@r > 6) {
+				bonus bMaxHpRate,5;
+				bonus bDef,5;
+				bonus bMdef,2;
+			}
+			if(.@r > 8) {
+				bonus2 bSubEle,Ele_Water,5;
+				bonus2 bSubEle,Ele_Wind,5;
+				bonus2 bSubEle,Ele_Earth,5;
+				bonus2 bSubEle,Ele_Fire,5;
+			}
+			break;
+		case 2520:
+			bonus bVit,1;
+			bonus bMdef,2;
+			if(.@r > 4) {
+				bonus bHPrecovRate,10;
+				bonus bSPrecovRate,10;
+				bonus bVit,4;
+				bonus bMdef,3;
+			}
+			if(.@r > 6) {
+				bonus bLongAtkDef,5;
+			}
+			if(.@r > 8) {
+				bonus bMaxHpRate,5;
+				bonus bMaxSPrate,5;
+			}
+			break;
 		// Error
 		case 0:
 		default:

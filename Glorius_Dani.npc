@@ -205,13 +205,14 @@ function	script	Glorius_Effect	{
 			bonus bUnbreakableWeapon;
 			bonus bAtkRange,2;
 			if(.@r>=4) {
+				bonus2 bAddRace,RC_DemiHuman,30;
+				bonus2 bAddRace,RC_Player,30;
 				bonus bCriticalRate,5*(.@r/2);
 				bonus bAspdRate,2*(.@r/2);
 				bonus bFleeRate,3*(.@r/2);
-				bonus2 bAddRace,RC_DemiHuman,30;
-				bonus2 bAddRace,RC_Player,30;
 				bonus2 bCriticalAddRace,RC_DemiHuman,5;
 				bonus2 bCriticalAddRace,RC_Player,5;
+				bonus2 bAddEff,Eff_Bleeding,500;
 				bonus2 bSkillAtk,"ASC_METEORASSAULT",25;
 				bonus2 bSkillAtk,"TF_SPRINKLESAND",25;
 				bonus2 bSkillAtk,"TF_THROWSTONE",25;
@@ -220,13 +221,12 @@ function	script	Glorius_Effect	{
 				bonus2 bSkillAtk,"ASC_BREAKER",25;
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
 				bonus2 bIgnoreDefRaceRate,RC_Player,10;
-				bonus2 bAddEff,Eff_Bleeding,500;
 			}
 			if(.@r>=6) {
-				bonus bCritAtkRate,10;
-				autobonus "{ bonus bCritical,15; }",50,5000,BF_SHORT|BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
 				bonus2 bAddRace,RC_DemiHuman,30;
 				bonus2 bAddRace,RC_Player,30;
+				autobonus "{ bonus bCritical,15; }",50,5000,BF_SHORT|BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
+				bonus bCritAtkRate,10;
 				bonus2 bCriticalAddRace,RC_DemiHuman,5;
 				bonus2 bCriticalAddRace,RC_Player,5;
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
@@ -235,15 +235,15 @@ function	script	Glorius_Effect	{
 			if(.@r>=7) {
 				bonus2 bAddRace,RC_DemiHuman,10;
 				bonus2 bAddRace,RC_Player,10;
-				bonus bCritAtkRate,10;
 				bonus3 bAutoSpell,"AL_DECAGI",5,30;
+				bonus bCritAtkRate,10;
+				bonus2 bCriticalAddRace,RC_DemiHuman,5;
+				bonus2 bCriticalAddRace,RC_Player,5;
+				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
+				bonus2 bIgnoreDefRaceRate,RC_Player,10;
 				//Slaughter Item Skill
 				bonus2 bAddRace,RC_DemiHuman,pow((.@r-4),2);
 				bonus2 bAddRace,RC_Player,pow((.@r-4),2);
-				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
-				bonus2 bIgnoreDefRaceRate,RC_Player,10;
-				bonus2 bCriticalAddRace,RC_DemiHuman,5;
-				bonus2 bCriticalAddRace,RC_Player,5;
 			}
 			if(.@r>=9) {
 				autobonus "{ bonus bAspdRate,100; }",5,3000,BF_SHORT,"{ specialeffect2 EF_POTION_BERSERK; }";
@@ -258,12 +258,12 @@ function	script	Glorius_Effect	{
 				bonus2 bCriticalAddRace,RC_Player,10;
 			}
 			if(.@r>=10) {
-				bonus2 bAddEff,Eff_Sleep,500;
-				bonus bCritAtkRate,5;
-				autobonus "{ bonus bCritical,15; }",50,5000,BF_SHORT|BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
+				bonus3 bHPVanishRate,50,5,BF_NORMAL;
 				bonus2 bCriticalAddRace,RC_DemiHuman,5;
 				bonus2 bCriticalAddRace,RC_Player,5;
-				bonus3 bHPVanishRate,50,5,BF_NORMAL;
+				bonus2 bAddEff,Eff_Blind,500;
+				bonus bCritAtkRate,5;
+				autobonus "{ bonus bCritical,15; }",50,5000,BF_SHORT|BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
 			}
 			break;
 		case 1382:
@@ -342,9 +342,9 @@ function	script	Glorius_Effect	{
 				bonus2 bAddRace,RC_Player,10;
 				bonus5 bAutoSpell,"MO_INVESTIGATE",5,50,BF_SHORT,1;
 				bonus2 bSkillAtk,"CH_TIGERFIST",65;
+				bonus2 bAddEff,Eff_Curse,500;
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
 				bonus2 bIgnoreDefRaceRate,RC_Player,10;
-				bonus2 bAddEff,Eff_Curse,500;
 				//Slaughter Item Skill
 				bonus2 bAddRace,RC_DemiHuman,pow((.@r-4),2);
 				bonus2 bAddRace,RC_Player,pow((.@r-4),2);
@@ -496,11 +496,11 @@ function	script	Glorius_Effect	{
 			bonus bMatkrate,5;
 			bonus2 bIgnoreMdefRaceRate,RC_DemiHuman,5;
 			bonus2 bIgnoreMdefRaceRate,RC_Player,5;
-			bonus2 bMagicAtkEle,Ele_Shadow,10;
-			bonus2 bMagicAtkEle,Ele_Undead,10;
-			bonus2 bMagicAtkEle,Ele_Ghost,10;
-			bonus2 bMagicAtkEle,Ele_Poison,10;
-			bonus2 bMagicAtkEle,Ele_Holy,10;
+			bonus2 bMagicAtkEle,Ele_Shadow,5;
+			bonus2 bMagicAtkEle,Ele_Undead,5;
+			bonus2 bMagicAtkEle,Ele_Ghost,5;
+			bonus2 bMagicAtkEle,Ele_Poison,5;
+			bonus2 bMagicAtkEle,Ele_Holy,5;
 			bonus5 bAutoSpellWhenHit,"SM_PROVOKE",3,50,BF_WEAPON|BF_SHORT,0;
 			break;
 		case 2549:
@@ -558,26 +558,28 @@ function	script	Glorius_Effect	{
 			break;
 		case 2395:
 			bonus bMaxHPRate,30;
+			bonus2 bSubRace,RC_DemiHuman,5;
+			bonus2 bSubRace,RC_Player,5;
 			bonus bSPrecovRate,30;
 			bonus bHPrecovRate,30;
 			bonus bSpeedAddRate,25;
 			break;
 		case 2444:
 			bonus bMaxHPRate,10;
-			bonus2 bSubRace,RC_DemiHuman,4;
-			bonus2 bSubRace,RC_Player,4;
+			bonus2 bSubRace,RC_DemiHuman,5;
+			bonus2 bSubRace,RC_Player,5;
 			bonus2 bSkillHeal,"AL_HEAL",5;
 			bonus2 bSkillHeal,"PR_SANCTUARY",5;
 			bonus2 bSkillHeal,"AM_POTIONPITCHER",5;
 			bonus2 bSkillHeal2,"AM_POTIONPITCHER",5;
 			bonus2 bSkillHeal2,"AL_HEAL",5;
 			bonus2 bSkillHeal2,"PR_SANCTUARY",5;
-			bonus5 bAutoSpellWhenHit,"AL_INCAGI",3,50,BF_WEAPON|BF_MAGIC,0;
+			bonus5 bAutoSpellWhenHit,"AL_INCAGI",5,50,BF_WEAPON|BF_MAGIC,0;
 		  break;
 		case 2394:
 			bonus bMaxHPRate,20;
-			bonus2 bSubRace,RC_DemiHuman,7;
-			bonus2 bSubRace,RC_Player,7;
+			bonus2 bSubRace,RC_DemiHuman,10;
+			bonus2 bSubRace,RC_Player,10;
 			bonus2 bSkillHeal,"AL_HEAL",5;
 			bonus2 bSkillHeal,"PR_SANCTUARY",5;
 			bonus2 bSkillHeal,"AM_POTIONPITCHER",5;
@@ -772,6 +774,16 @@ function	script	Glorius_Effect	{
 			bonus bShortWeaponDamageReturn,5;
 			bonus bLongAtkDef,5;
 			bonus5 bAutoSpellWhenHit,"AL_INCAGI",5,50,BF_WEAPON|BF_MAGIC,0;
+			if(isequipped(61000,61002)) {
+				bonus2 bSkillAtk,"NJ_KOUENKA",25;
+				bonus2 bSkillAtk,"NJ_KAENSIN",25;
+				bonus2 bSkillAtk,"NJ_BAKUENRYU",25;
+				bonus2 bSkillAtk,"NJ_HYOUSENSOU",25;
+				bonus2 bSkillAtk,"NJ_HYOUSYOURAKU",25;
+				bonus2 bSkillAtk,"NJ_HUUJIN",25;
+				bonus2 bSkillAtk,"NJ_RAIGEKISAI",25;
+				bonus2 bSkillAtk,"NJ_KAMAITACHI",25;
+			}
 			break;
 		case 61002: // Expert Ninja Boots
 			bonus bStr,5;
@@ -785,10 +797,10 @@ function	script	Glorius_Effect	{
 			bonus2 bSubEle,Ele_Neutral,5;
 			bonus5 bAutoSpellWhenHit,"AL_BLESSING",5,50,BF_WEAPON|BF_MAGIC,0;
 			if(isequipped(61000,61001)) {
-				bonus2 bMagicAtkEle,Ele_Fire,25;
-				bonus2 bMagicAtkEle,Ele_Water,25;
-				bonus2 bMagicAtkEle,Ele_Wind,25;
-				bonus2 bMagicAtkEle,Ele_Shadow,25;
+				bonus2 bMagicAtkEle,Ele_Fire,15;
+				bonus2 bMagicAtkEle,Ele_Water,15;
+				bonus2 bMagicAtkEle,Ele_Wind,15;
+				bonus2 bMagicAtkEle,Ele_Shadow,15;
 			}
 			break;
 		case 13418:
@@ -972,7 +984,7 @@ function	script	Glorius_Effect	{
 				bonus2 bSkillAtk,"AS_SONICBLOW",5;
 				autobonus "{ bonus bHit,10; }",50,5000,BF_SHORT|BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
 				bonus2 bAddEff,Eff_Freeze,500;
-				bonus5 bAutoSpell,"PR_IMPOSITIO",5,50,BF_SHORT|BF_NORMAL|BF_SKILL,1; // >(Adds a 5% of chance to auto cast Level 5 Impositio Manus itself when using Sonic Blow skill.)<
+				bonus5 bAutoSpell,"PR_IMPOSITIO",5,50,BF_SHORT|BF_NORMAL|BF_SKILL,1;
 			}
 			break;
 		case 1827:
@@ -986,7 +998,7 @@ function	script	Glorius_Effect	{
 				bonus2 bLongAtkAddRace,RC_Player,15;
 				bonus2 bSkillAtk,"CH_PALMSTRIKE",50;
 				bonus2 bSkillAtk,"MO_BALKYOUNG",50;
-				bonus2 bAddEle,Ele_Holy,50;
+				bonus2 bSkillAtk,"AL_HOLYLIGHT",50;
 				bonus2 bSkillAtk,"MO_FINGEROFFENSIVE",15;
 				bonus2 bMagicAtkEle,Ele_Fire,15;
 				bonus2 bMagicAtkEle,Ele_Water,15;
@@ -1015,7 +1027,7 @@ function	script	Glorius_Effect	{
 			if(.@r>=7) {
 				bonus2 bLongAtkAddRace,RC_DemiHuman,20;
 				bonus2 bLongAtkAddRace,RC_Player,20;
-				autobonus2 "{ bonus bBaseAtk,50; }",50,3000,BF_SHORT|BF_LONG|BF_MAGIC,"{ specialeffect2 EF_ENHANCE; }"; //(Has a chance to get buffed with ATK +50 for 5 seconds when using Finger Offensive skill.)
+				autobonus2 "{ bonus bBaseAtk,50; }",50,3000,BF_SHORT|BF_LONG|BF_MAGIC,"{ specialeffect2 EF_ENHANCE; }";
 				bonus2 bSkillAtk,"MO_FINGEROFFENSIVE",20;
 				bonus bMaxHPrate,3;
 				bonus bAspdRate,6;
@@ -1174,19 +1186,19 @@ function	script	Glorius_Effect	{
 			if(.@r>=6){
 				bonus2 bAddRace,RC_DemiHuman,30;
 				bonus2 bAddRace,RC_Player,30;
-				bonus2 bSkillAtk,"CR_HOLYCROSS",10;
-				bonus2 bSkillAtk,"SM_MAGNUM",10;
-				bonus2 bSkillAtk,"KN_BOWLINGBASH",10;
-				bonus2 bSkillAtk,"KN_PIERCE",10;
-				bonus2 bSkillAtk,"KN_BRANDISHSPEAR",10;
-				bonus2 bSkillAtk,"KN_SPEARBOOMERANG",10;
-				bonus2 bSkillAtk,"SM_BASH",10;
-				bonus2 bSkillAtk,"LK_SPIRALPIERCE",10;
-				bonus2 bSkillAtk,"LK_HEADCRUSH",10;
-				bonus2 bSkillAtk,"LK_JOINTBEAT",10;
-				bonus2 bSkillAtk,"KN_SPEARSTAB",10;
-				bonus2 bSkillAtk,"PA_SACRIFICE",10;
-				bonus2 bSkillAtk,"PA_PRESSURE",10;
+				bonus2 bSkillAtk,"CR_HOLYCROSS",15;
+				bonus2 bSkillAtk,"SM_MAGNUM",15;
+				bonus2 bSkillAtk,"KN_BOWLINGBASH",15;
+				bonus2 bSkillAtk,"KN_PIERCE",15;
+				bonus2 bSkillAtk,"KN_BRANDISHSPEAR",15;
+				bonus2 bSkillAtk,"KN_SPEARBOOMERANG",15;
+				bonus2 bSkillAtk,"SM_BASH",15;
+				bonus2 bSkillAtk,"LK_SPIRALPIERCE",15;
+				bonus2 bSkillAtk,"LK_HEADCRUSH",15;
+				bonus2 bSkillAtk,"LK_JOINTBEAT",15;
+				bonus2 bSkillAtk,"KN_SPEARSTAB",15;
+				bonus2 bSkillAtk,"PA_SACRIFICE",15;
+				bonus2 bSkillAtk,"PA_PRESSURE",15;
 				bonus2 bAddEff,Eff_Bleeding,500;
 				bonus bMaxHPRate,3;
 				bonus bCritical,15;
@@ -1209,22 +1221,21 @@ function	script	Glorius_Effect	{
 				//Slaughter Item Skill
 				bonus2 bAddRace,RC_DemiHuman,pow((.@r-4),2);
 				bonus2 bAddRace,RC_Player,pow((.@r-4),2);
-
 			}
 			if(.@r>=9){
-				bonus2 bSkillAtk,"CR_HOLYCROSS",10;
-				bonus2 bSkillAtk,"SM_MAGNUM",10;
-				bonus2 bSkillAtk,"KN_BOWLINGBASH",10;
-				bonus2 bSkillAtk,"KN_PIERCE",10;
-				bonus2 bSkillAtk,"KN_BRANDISHSPEAR",10;
-				bonus2 bSkillAtk,"KN_SPEARBOOMERANG",10;
-				bonus2 bSkillAtk,"SM_BASH",10;
-				bonus2 bSkillAtk,"LK_SPIRALPIERCE",10;
-				bonus2 bSkillAtk,"LK_HEADCRUSH",10;
-				bonus2 bSkillAtk,"LK_JOINTBEAT",10;
-				bonus2 bSkillAtk,"KN_SPEARSTAB",10;
-				bonus2 bSkillAtk,"PA_SACRIFICE",10;
-				bonus2 bSkillAtk,"PA_PRESSURE",10;
+				bonus2 bSkillAtk,"CR_HOLYCROSS",15;
+				bonus2 bSkillAtk,"SM_MAGNUM",15;
+				bonus2 bSkillAtk,"KN_BOWLINGBASH",15;
+				bonus2 bSkillAtk,"KN_PIERCE",15;
+				bonus2 bSkillAtk,"KN_BRANDISHSPEAR",15;
+				bonus2 bSkillAtk,"KN_SPEARBOOMERANG",15;
+				bonus2 bSkillAtk,"SM_BASH",15;
+				bonus2 bSkillAtk,"LK_SPIRALPIERCE",15;
+				bonus2 bSkillAtk,"LK_HEADCRUSH",15;
+				bonus2 bSkillAtk,"LK_JOINTBEAT",15;
+				bonus2 bSkillAtk,"KN_SPEARSTAB",15;
+				bonus2 bSkillAtk,"PA_SACRIFICE",15;
+				bonus2 bSkillAtk,"PA_PRESSURE",15;
 				bonus2 bAddEff,Eff_Blind,500;
 				autobonus "{ bonus bBaseAtk,100; }",5,3000,BF_SHORT|BF_SKILL,"{ specialeffect2 EF_ENHANCE; }";
 			}
@@ -1313,8 +1324,6 @@ function	script	Glorius_Effect	{
 				bonus2 bSkillAtk,"ASC_METEORASSAULT",20;
 				bonus2 bSkillAtk,"MO_INVESTIGATE",20;
 				bonus2 bSkillAtk,"KN_BOWLINGBASH",20;
-				bonus2 bSubRace,RC_DemiHuman,5;
-				bonus2 bsubRace,RC_Player,5;
 				bonus bCastrate,-15;
 				bonus bAspdRate,15;
 				bonus bBaseAtk,50;
@@ -1338,8 +1347,6 @@ function	script	Glorius_Effect	{
 				bonus3 bAutoSpell,"PA_PRESSURE",2,50;
 				bonus3 bAutoSpell,"MG_FIREBALL",1,150;
 				bonus3 bAutoSpell,"KN_BOWLINGBASH",10,50;
-				bonus2 bSubRace,RC_DemiHuman,5;
-				bonus2 bSubRace,RC_Player,5;
 				bonus2 bSkillAtk,"MG_FIREBOLT",25;
 				bonus2 bSkillAtk,"MG_COLDBOLT",25;
 				bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",25;
@@ -1354,8 +1361,6 @@ function	script	Glorius_Effect	{
 			}
 			if(.@r>=10){
 				bonus5 bAutoSpell,"SL_MONK",1,50,BF_MAGIC,1;
-				bonus2 bSubRace,RC_DemiHuman,2;
-				bonus2 bSubRace,RC_Player,2;
 				bonus2 bSkillAtk,"MG_FIREBOLT",30;
 				bonus2 bSkillAtk,"MG_COLDBOLT",30;
 				bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",30;
@@ -1395,8 +1400,6 @@ function	script	Glorius_Effect	{
 				bonus2 bSkillAtk,"AC_CHARGEARROW",20;
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
 				bonus2 bIgnoreDefRaceRate,RC_Player,10;
-				bonus2 bIgnoreMdefRaceRate,RC_DemiHuman,10;
-				bonus2 bIgnoreMdefRaceRate,RC_Player,10;
 			}
 			if(.@r>=6) {
 				bonus2 bLongAtkAddRace,RC_DemiHuman,20;
@@ -1410,8 +1413,6 @@ function	script	Glorius_Effect	{
 				bonus3 bAutoSpell,"AL_DECAGI",5,50;
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
 				bonus2 bIgnoreDefRaceRate,RC_Player,10;
-				bonus2 bIgnoreMdefRaceRate,RC_DemiHuman,10;
-				bonus2 bIgnoreMdefRaceRate,RC_Player,10;
 			}
 			if(.@r>=7) {
 				bonus2 bLongAtkAddRace,RC_DemiHuman,10;
@@ -1422,11 +1423,9 @@ function	script	Glorius_Effect	{
 				bonus bMaxHP,2000;
 				bonus bAddMaxWeight,1500;
 				bonus bLongAtkRate,((getequipid(EQI_AMMO)==1753)?20:10);
-				bonus3 bAutoSpell,"PF_SPIDERWEB",1,200;
+				bonus3 bAutoSpell,"PF_SPIDERWEB",1,100;
 				bonus2 bIgnoreDefRaceRate,RC_DemiHuman,10;
 				bonus2 bIgnoreDefRaceRate,RC_Player,10;
-				bonus2 bIgnoreMdefRaceRate,RC_DemiHuman,10;
-				bonus2 bIgnoreMdefRaceRate,RC_Player,10;
 				//Slaughter Item Skill
 				bonus2 bAddRace,RC_DemiHuman,pow((.@r-4),2);
 				bonus2 bAddRace,RC_Player,pow((.@r-4),2);

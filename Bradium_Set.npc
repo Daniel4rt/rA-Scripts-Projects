@@ -5,6 +5,44 @@ function	script	Bradium_Effect	{
 	}
 	.@r = getrefine();
 	switch (getarg(0)) {
+		case 2790:
+			bonus bFlee,10;
+			bonus bAllStats,1;
+			bonus bCritical,10;
+			bonus bMdef,1;
+			autobonus "{ bonus bAspdRate,5; }",300,3000,BF_SHORT,"{ specialeffect2 EF_POTION_BERSERK; }";
+			bonus bLongAtkRate,3;
+			break;
+		case 2788:
+			bonus bMatkRate,5;
+			bonus bAllStats,1;
+			bonus bMatk,10;
+			bonus bMdef,2;
+			autobonus "{ bonus bCastrate,-3; }",300,3000,BF_MAGIC,"{ specialeffect2 EF_SUFFRAGIUM;  }";
+			bonus bMatkRate,3;
+			break;
+		case 2138:
+			bonus2 bSkillAtk,"CR_SHIELDBOOMERANG",50;
+			bonus2 bSkillAtk,"KN_SPEARBOOMERANG",50;
+			bonus bAgi,-1;
+			bonus bMaxHP,500;
+			if(.@r > 4){
+				bonus bMaxHpRate,2;
+				bonus2 bSkillHeal,"AL_HEAL",5;
+				bonus2 bSkillHeal,"AM_POTIONPITCHER",5;
+				bonus bAddItemHealRate,5;
+			}
+			if(.@r > 6) {
+				bonus bMaxHP,1000;
+				bonus bMaxHpRate,3;
+				bonus5 bAutoSpellWhenHit,"PR_KYRIE",1,50,BF_WEAPON,0;
+			}
+			if(.@r > 8) {
+				bonus bMaxHpRate,5;
+				bonus2 bSubRace,RC_DemiHuman,3;
+				bonus2 bSubRace,RC_Player,3;
+			}
+			break;
 		// Error
 		case 0:
 		default:

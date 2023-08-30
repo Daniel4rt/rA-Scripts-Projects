@@ -43,28 +43,29 @@ function	script	Diabolus_Effect	{
 			bonus2 bResEff,Eff_Stun,1000;
 			bonus2 bResEff,Eff_Stone,1000;
 
-			if(isequipped(2729) && isequipped(2728)) {
-				bonus bAtkRate,5;
-				bonus bMatkRate,10;
 			}
 			if(.@r > 4) {
 				bonus bMaxHPRate,2;
-				bonus bHPrecovRate,5;
-				bonus bSPrecovRate,5;
+				bonus bHPrecovRate,10;
+				bonus bSPrecovRate,10;
+				autobonus2 "{ bonus bBaseAtk,10; bonus bMatk,10; }",500,3000,BF_SHORT|BF_MAGIC,"{ specialeffect2 EF_ENHANCE; }";
 			}
 			if(.@r > 6) {
 				bonus bMaxHpRate,3;
-				bonus bHPrecovRate,5;
-				bonus bSPrecovRate,5;
+				bonus bHPrecovRate,10;
+				bonus bSPrecovRate,10;
 				autobonus "{}",100,3000,BF_SHORT|BF_LONG|BF_SKILL,"{ for(.@i,0; .@i < 3; .@i++) { itemheal 4000,0; specialeffect2 EF_HEAL; sleep2 1000; } }";
 			}
 			if(.@r > 8) {
 				bonus bMaxHpRate,5;
-				bonus bHPrecovRate,10;
-				bonus bSPrecovRate,10;
-				bonus bAtkRate,5;
+				bonus bHPrecovRate,15;
+				bonus bSPrecovRate,15;
 				bonus2 bAddRace,RC_DemiHuman,5;
 				bonus2 bAddRace,RC_Player,5;
+			}
+			if(isequipped(2729) && isequipped(2728)) {
+				bonus bAtkRate,5;
+				bonus bMatkRate,10;
 			}
 			break;
 		case 2433:
@@ -91,15 +92,15 @@ function	script	Diabolus_Effect	{
 				bonus bHit,5;
 				bonus bAspdRate,5;
 				bonus bCriticalRate,15;
-				autobonus2 "{ bonus bNoWeaponDamage,100; }",100,3100,BF_SHORT,"{ specialeffect2 EF_HASTEUP; }";
+				autobonus2 "{ bonus bNoWeaponDamage,100; }",100,3000,BF_SHORT,"{ specialeffect2 EF_HASTEUP; }";
+				
 			}
-
-			if(isequipped(2536)) {
+			if(isequipped(2537) && isequipped(2536)) {
 				bonus bMaxHpRate,7;
 			}
 			break;
 		case 2537:
-			bonus2 bSubEle,Ele_Neutral,5;
+				bonus2 bSubEle,Ele_Neutral,5;
 			bonus bMaxHP,1000;
 			bonus2 bAddDamageClass,1916,10;
 			bonus2 bAddDamageClass,1917,10;
@@ -108,10 +109,11 @@ function	script	Diabolus_Effect	{
 				bonus bFlee,2;
 				bonus bBaseAtk,5;
 				bonus bAtkRate,2;
+				bonus2 bSubEle,Ele_Neutral,2;
 			}
 			if(.@r > 6) {
 				bonus bFlee,3;
-				bonus bBaseAtk,7;
+				bonus bbaseatk,7;
 				bonus bAtkRate,4;
 				bonus2 bSubEle,Ele_Neutral,3;
 			}
@@ -120,11 +122,6 @@ function	script	Diabolus_Effect	{
 				bonus bBaseAtk,9;
 				bonus bAtkRate,6;
 				bonus2 bMagicAtkEle,Ele_All,5;
-			}
-
-			if(isequipped(2729) && isequipped(2728)) {
-				bonus bAtkRate,5;
-				bonus bMatkRate,10;
 			}
 			break;
 		case 2374:
@@ -135,23 +132,23 @@ function	script	Diabolus_Effect	{
 			bonus bDelayRate,-12;
 
 			if(.@r > 4) {
-				bonus bMaxSPrate,2;
+				bonus bMaxSP,25;
 				bonus bHPrecovRate,5;
 				bonus bSPrecovRate,5;
-				autobonus "{ bonus bNoMagicDamage,100; }",100,3000,BF_MAGIC,"{ specialeffect2 EF_WIND; }";
-			}
-			if(.@r > 6) {
-				bonus bMaxSPrate,3;
-				bonus bHPrecovRate,10;
-				bonus bSPrecovRate,10;
 				bonus2 bMagicAddRace,RC_Demihuman,5;
 				bonus2 bMagicAddRace,RC_Player,5;
+			}
+			if(.@r > 6) {
+				bonus bMaxSP,25;
+				bonus bHPrecovRate,10;
+				bonus bSPrecovRate,10;
+				autobonus "{ bonus bNoMagicDamage,100; }",100,3000,BF_MAGIC,"{ specialeffect2 EF_WIND; }";
 			}
 			if(.@r > 8) {
 				bonus bMaxSPrate,5;
 				bonus bHPrecovRate,15;
 				bonus bSPrecovRate,15;
-				autobonus2 "{ bonus bDefEle,Ele_Ghost; }",100,3000,BF_WEAPON,"{ specialeffect2 EF_ENERGYCOAT; }";
+				autobonus2 "{ bonus bDefEle,Ele_Ghost; }",100,3000,BF_WEAPON,"{ specialeffect2 EF_ENERGYCOAT;; }";
 			}
 
 			if(isequipped(2729) && isequipped(2728)) {
@@ -195,8 +192,8 @@ function	script	Diabolus_Effect	{
 				bonus2 bSubEle,Ele_Neutral,5;
 			}
 			if(.@r > 6) {
-				bonus bCritAtkRate,20;
-				bonus bFlee2,15;
+				bonus bCritAtkRate,10;
+				bonus bFlee2,10;
 				bonus bCritical,15;
 			}
 			if(.@r > 8) {
@@ -220,6 +217,7 @@ function	script	Diabolus_Effect	{
 				bonus bMaxHpRate,2;
 				bonus bHPrecovRate,10;
 				bonus bSPRegenRate,10;
+				bonus2 bSkillAtk,"CR_HOLYCROSS",5;
 				bonus2 bSkillAtk,"SM_MAGNUM",5;
 				bonus2 bSkillAtk,"KN_BOWLINGBASH",5;
 				bonus2 bSkillAtk,"KN_PIERCE",5;
@@ -237,7 +235,7 @@ function	script	Diabolus_Effect	{
 				bonus bMaxHpRate,2;
 				bonus bHPrecovRate,15;
 				bonus bSPRegenRate,15;
-				bonus bShortWeaponDamageReturn,10;
+				bonus bShortWeaponDamageReturn,15;
 			}
 			break;
 
