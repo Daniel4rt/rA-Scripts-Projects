@@ -1212,18 +1212,6 @@ int mob_spawn (struct mob_data *md)
 
 	memset(&md->state, 0, sizeof(md->state));
 	status_calc_mob(md, SCO_FIRST);
-
-	if(md->mob_id){
-		bool is_mvp = md->get_bosstype() == BOSSTYPE_MVP;
-		if (is_mvp){
-			md->status.ele_lv = 1;
-			md->status.def_ele = 1;
-			char greeting[] = " Algo";
-			strcat(md->name, greeting);
-		}
-	}
-
-
 	md->attacked_id = 0;
 	md->norm_attacked_id = 0;
 	md->target_id = 0;
