@@ -60,7 +60,7 @@ function	script	Thanatos_Effect	{
 
 			if(.@r > 4) {
 				bonus bHPrecovRate,10;
-				bonus bSPRegenRate,10;
+				bonus bSPrecovRate,10;
 				bonus bVit,2;
 			}
 			if(.@r > 6) {

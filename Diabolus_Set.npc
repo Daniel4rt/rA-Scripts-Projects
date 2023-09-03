@@ -52,7 +52,7 @@ function	script	Diabolus_Effect	{
 				bonus bMaxHpRate,3;
 				bonus bHPrecovRate,10;
 				bonus bSPrecovRate,10;
-				autobonus "{}",100,3000,BF_SHORT|BF_LONG|BF_SKILL,"{ for(.@i,0; .@i < 3; .@i++) { itemheal 4000,0; specialeffect2 EF_HEAL; sleep2 1000; } }";
+				autobonus "{}",100,3000,BF_SHORT|BF_LONG|BF_SKILL,"{ for(.@i=0; .@i < 3; .@i++) { itemheal 4000,0; specialeffect2 EF_HEAL; sleep2 1000; } }";
 			}
 			if(.@r > 8) {
 				bonus bMaxHpRate,5;
@@ -91,7 +91,7 @@ function	script	Diabolus_Effect	{
 				bonus bAspdRate,5;
 				bonus bCriticalRate,15;
 				autobonus2 "{ bonus bNoWeaponDamage,100; }",100,3000,BF_SHORT,"{ specialeffect2 EF_HASTEUP; }";
-				
+
 			}
 			if(isequipped(2537) && isequipped(2536)) {
 				bonus bMaxHpRate,7;
