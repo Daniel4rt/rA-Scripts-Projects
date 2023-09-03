@@ -25831,7 +25831,7 @@ BUILDIN_FUNC(convertpcinfo) {
 }
 
 /**
- * @smob "mapa",<x>,<y>,"nombre",<id>,<size>,<cantidad>,<partyid>,<sHP>,<ally>,<nSlaves>,<noExpDrop>,<item>,<cantidad>,<iswar>,<exp_boost>,<drop_boost>,<element>,<element_level>;
+ * @smob "mapa",<x>,<y>,"nombre",<id>,<size>,<cantidad>,<partyid>,<sHP>,<ally>,<nSlaves>,<noExpDrop>,<item>,<cantidad>,<iswar>,<exp_boost>,<drop_boost>,<element>,<element_level>,<is_boss>;
  * @author DanielArt
 **/
 BUILDIN_FUNC(smob)
@@ -25857,6 +25857,7 @@ BUILDIN_FUNC(smob)
 	int dbs           = script_getnum(st,19);
 	int ele						= script_getnum(st,20);
 	int ele_lv				= script_getnum(st,21);
+	int is_boss				= script_getnum(st,22);
 	if( script_hasdata(st,20) ) {
 		ev = script_getstr(st,20);
 		check_event(st, ev);
@@ -25865,7 +25866,7 @@ BUILDIN_FUNC(smob)
 		ShowWarning("buildin_monster: Attempted to spawn non-existing monster class %d\n", class_);
 		return SCRIPT_CMD_SUCCESS;
 	}
-	int k = mob_sub_smob(map_id2sd(st->rid),map,x,y,str,class_,ita,ev,mhp,size,ai,nsl,0,shp,0,0,ned,pid,itd,itc,wr,eb,dbs,ele,ele_lv);
+	int k = mob_sub_smob(map_id2sd(st->rid),map,x,y,str,class_,ita,ev,mhp,size,ai,nsl,0,shp,0,0,ned,pid,itd,itc,wr,eb,dbs,ele,ele_lv,is_boss);
 	if(k)
 		script_pushint(st,1);
 	else

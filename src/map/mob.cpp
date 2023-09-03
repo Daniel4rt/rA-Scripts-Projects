@@ -661,7 +661,7 @@ bool mob_ksprotected (struct block_list *src, struct block_list *target)
 	return false;
 }
 
-int mob_sub_smob(struct map_session_data *sd, const char *mapname, short x, short y, const char *mobname, int class_, int amount, const char *event, int hp_mod, short size, short ai_type, bool no_slaves, short allow_warp, short hp_show, bool announce_hprate, bool announce_killer, bool no_expdrop, int TeamID, short item_drop, short item_amount, bool is_war, short exp_boost, bool drop_boost, short element, short element_lv )
+int mob_sub_smob(struct map_session_data *sd, const char *mapname, short x, short y, const char *mobname, int class_, int amount, const char *event, int hp_mod, short size, short ai_type, bool no_slaves, short allow_warp, short hp_show, bool announce_hprate, bool announce_killer, bool no_expdrop, int TeamID, short item_drop, short item_amount, bool is_war, short exp_boost, bool drop_boost, short element, short element_lv, bool is_boss )
 {
 	struct mob_data *md = NULL;
 	int m, count, lv = MAX_LEVEL;
@@ -716,6 +716,8 @@ int mob_sub_smob(struct map_session_data *sd, const char *mapname, short x, shor
 			ShowError("mob_sub_smob: Invalid element level %d (max=%d).\n", element_lv, MAX_ELE_LEVEL);
 			return false;
 		}
+		if( is_boss )
+			md->option.is_boss = true;
 		md->option.element = element;
 		md->option.element_lv = element_lv;
 		mob_spawn (md);
@@ -1318,6 +1320,10 @@ int mob_spawn (struct mob_data *md)
 	// MvP tomb [GreenBox]
 	if ( md->tomb_nid )
 		mvptomb_destroy(md);
+
+	// MvP [DanielArt]
+	if( md->option.is_boss)
+		md->state.boss = true;
 
 	if(map_addblock(&md->bl))
 		return 2;

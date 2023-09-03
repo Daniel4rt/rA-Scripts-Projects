@@ -10554,7 +10554,7 @@ ACMD_FUNC(smob)
 	for( i = 0; i < number; i++ ) {
 		if( !spawn )
 			map_search_freecell(&sd->bl, 0, &mx, &my, range, range, 0);
-		k = mob_sub_smob(sd, "this", mx, my, "--ja--", mob_id, 1, "", mobhp, size, ai, summon, canusewarps, hpm, anunciohp, anunciomuerte, noexp, 0, itemid, amount, false, 0, 0, 0, 0);
+		k = mob_sub_smob(sd, "this", mx, my, "--ja--", mob_id, 1, "", mobhp, size, ai, summon, canusewarps, hpm, anunciohp, anunciomuerte, noexp, 0, itemid, amount, false, 0, 0, 0, 0, false);
 		if(!k) {
 			clif_displaymessage(fd, "Un error ha ocurrido ejecutando smob." );
 			return -1;
