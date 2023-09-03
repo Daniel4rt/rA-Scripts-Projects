@@ -984,7 +984,7 @@ function	script	Glorius_Effect	{
 				bonus2 bSkillAtk,"AS_SONICBLOW",5;
 				autobonus "{ bonus bHit,10; }",50,5000,BF_SHORT|BF_NORMAL,"{ specialeffect2 EF_ENHANCE; }";
 				bonus2 bAddEff,Eff_Freeze,500;
-				bonus5 bAutoSpell,"PR_IMPOSITIO",5,50,BF_SHORT|BF_NORMAL|BF_SKILL,1;
+				bonus5 bAutoSpell,"PR_IMPOSITIO",5,50,BF_SHORT|BF_NORMAL|BF_SKILL,0;
 			}
 			break;
 		case 1827:
@@ -1062,7 +1062,7 @@ function	script	Glorius_Effect	{
 				bonus bCastrate,-3;
 				bonus2 bSkillAtk,"MO_FINGEROFFENSIVE",10;
 				bonus bDelayRate,-5;
-				bonus5 bAutoSpell,"PR_IMPOSITIO",4,50,BF_SHORT|BF_NORMAL|BF_SKILL,1; //>(Adds a 5% of chance to auto cast Level 4 Impositio Manus itself when using Finger Offensive skill.)<
+				bonus5 bAutoSpell,"PR_IMPOSITIO",4,50,BF_SHORT|BF_NORMAL|BF_SKILL,0;
 			}
 			break;
 		case 1426:
