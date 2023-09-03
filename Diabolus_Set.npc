@@ -42,8 +42,6 @@ function	script	Diabolus_Effect	{
 			bonus bMaxHP,500;
 			bonus2 bResEff,Eff_Stun,1000;
 			bonus2 bResEff,Eff_Stone,1000;
-
-			}
 			if(.@r > 4) {
 				bonus bMaxHPRate,2;
 				bonus bHPrecovRate,10;

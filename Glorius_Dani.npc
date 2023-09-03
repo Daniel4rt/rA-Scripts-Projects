@@ -352,7 +352,7 @@ function	script	Glorius_Effect	{
 			if(.@r>8) {
 				autobonus "{ bonus bBaseAtk,50; }",50,3000,BF_SHORT,"{ specialeffect2 EF_ENHANCE; }";
 				bonus2 bSkillAtk,"CH_PALMSTRIKE",55;
-				bonus2 bSkillAtk,"Chain Crush Combo",55;
+				bonus2 bSkillAtk,"CH_CHAINCRUSH",55;
 				bonus2 bAddEff,Eff_Sleep,500;
 				bonus bAspdRate,7;
 				bonus2 bCastrate,"MO_EXTREMITYFIST",-25;
