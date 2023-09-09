@@ -195,7 +195,7 @@ int enable_grf = 0;	//To enable/disable reading maps from GRF files, bypassing m
 
 static bool map_color_nicks_parse(char* split[], int columns, int current)
 {
-	struct color_data* cn_data; 
+	struct color_data* cn_data;
 
 	int group_id = atoi(split[0]);
 
@@ -1796,7 +1796,7 @@ int map_search_freecell(struct block_list *src, int16 m, int16 *x,int16 *y, int1
  * Returns true on success and sets x and y to cell found.
  * Otherwise returns false and x and y are not changed.
  * type: Types of block to count
- * flag: 
+ * flag:
  *		0x1 - only count standing units
  *------------------------------------------*/
 bool map_closest_freecell(int16 m, int16 *x, int16 *y, int type, int flag)
@@ -1823,7 +1823,7 @@ bool map_closest_freecell(int16 m, int16 *x, int16 *y, int type, int flag)
 				*y = ty;
 				return true;
 			}
-		} 
+		}
 		//Full diagonal search
 		else if(dir%2 == 1 && costrange%MOVE_DIAGONAL_COST == 0) {
 			tx = *x+dx*(costrange/MOVE_DIAGONAL_COST);
@@ -1933,6 +1933,33 @@ int map_addflooritem(struct item *item, int amount, int16 m, int16 x, int16 y, i
 	return fitem->bl.id;
 }
 
+/*==========================================
+ * Add an item in floor to location (m,x,y), and select nameid with quantity add restriction for those who could pickup later
+ * @author DanielArt
+*------------------------------------------*/
+int map_addflooritem_area(struct block_list* bl, int16 m, int16 x, int16 y, int nameid, int amount)
+{
+	struct item item_tmp;
+	int count, range, i;
+	short mx, my;
+	memset(&item_tmp, 0, sizeof(item_tmp));
+	item_tmp.nameid = nameid;
+	item_tmp.identify = 1;
+	if( bl != NULL ) m = bl->m;
+	count = 0;
+	range = (int)sqrt(amount) +2;
+	for( i = 0; i < amount; i++ ) {
+		if( bl != NULL )
+			map_search_freecell(bl, 0, &mx, &my, range, range, 0);
+		else {
+			mx = x; my = y;
+			map_search_freecell(NULL, m, &mx, &my, range, range, 1);
+		}
+		count += (map_addflooritem(&item_tmp, 1, m, mx, my, 0, 0, 0, 4, 0) != 0) ? 1 : 0;
+	}
+	return count;
+}
+
 /**
  * @see DBCreateData
  */
@@ -1948,7 +1975,7 @@ static DBData create_charid2nick(DBKey key, va_list args)
 void map_addnickdb(int charid, const char* nick)
 {
 	struct charid2nick* p;
-	
+
 	if( map_charid2sd(charid) )
 		return;// already online
 
@@ -2166,10 +2193,10 @@ int map_quit(struct map_session_data *sd) {
 		status_change_end(&sd->bl, SC_SPRITEMABLE, INVALID_TIMER);
 		status_change_end(&sd->bl, SC_SV_ROOTTWIST, INVALID_TIMER);
 		// Remove visuals effect from headgear
-		status_change_end(&sd->bl, SC_MOONSTAR, INVALID_TIMER); 
-		status_change_end(&sd->bl, SC_SUPER_STAR, INVALID_TIMER); 
-		status_change_end(&sd->bl, SC_STRANGELIGHTS, INVALID_TIMER); 
-		status_change_end(&sd->bl, SC_DECORATION_OF_MUSIC, INVALID_TIMER); 
+		status_change_end(&sd->bl, SC_MOONSTAR, INVALID_TIMER);
+		status_change_end(&sd->bl, SC_SUPER_STAR, INVALID_TIMER);
+		status_change_end(&sd->bl, SC_STRANGELIGHTS, INVALID_TIMER);
+		status_change_end(&sd->bl, SC_DECORATION_OF_MUSIC, INVALID_TIMER);
 		if (battle_config.debuff_on_logout&1) { //Remove negative buffs
 			status_change_end(&sd->bl, SC_ORCISH, INVALID_TIMER);
 			status_change_end(&sd->bl, SC_STRIPWEAPON, INVALID_TIMER);
@@ -5315,7 +5342,7 @@ int do_init(int argc, char *argv[])
 	add_timer_func_list(map_clearflooritem_timer, "map_clearflooritem_timer");
 	add_timer_func_list(map_removemobs_timer, "map_removemobs_timer");
 	add_timer_interval(gettick()+1000, map_freeblock_timer, 0, 0, 60*1000);
-	
+
 	map_do_init_msg();
 	do_init_path();
 	do_init_atcommand();
@@ -5374,4 +5401,3 @@ int do_init(int argc, char *argv[])
 
 	return 0;
 }
-

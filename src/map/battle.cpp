@@ -1070,6 +1070,20 @@ int64 battle_calc_damage(struct block_list* src, struct block_list* bl, struct D
 		&& skill_get_casttype(skill_id) == CAST_GROUND)
 		return 0;
 
+	if( bl->type == BL_MOB )
+	{ // Event Emperiums works like GvG Emperiums [DanielArt]
+		struct mob_data *md = BL_CAST(BL_MOB, bl);
+		if( md && md->option.is_event && md->mob_id == MOBID_EVENT_EMPERIUM && flag&BF_SKILL )
+			switch( skill_id )
+			{
+				case MO_TRIPLEATTACK:
+				case HW_GRAVITATION:
+					break;
+				default:
+					return 0;
+			}
+	}
+
 	if (bl->type == BL_PC) {
 		sd = (struct map_session_data*)bl;
 		//Special no damage states
@@ -7993,6 +8007,23 @@ int battle_check_target(struct block_list* src, struct block_list* target, int f
 		struct map_session_data* sd = BL_CAST(BL_PC, s_bl);
 		if (s_bl != t_bl)
 		{
+			// AI Special Ally [DanielArt]
+			if( t_bl->type == BL_MOB && ((TBL_MOB*)t_bl)->option.is_event )
+			{
+				struct mob_data *md = BL_CAST(BL_MOB,t_bl);
+
+				if( mapdata_flag_gvg(mapdata) && md->option.guild_id && !sd->status.guild_id )
+					return 0;
+
+				if( md->option.is_war && (!sd->status.guild_id || !guild_check_alliance(sd->status.guild_id,md->option.guild_id,1) ) )
+					return 0;
+
+				if( md->option.ai_type == 1 )
+					state |= BCT_PARTY;
+				else if( md->option.ai_type == 3 )
+					return 0;
+			}
+
 			if (sd->state.killer)
 			{
 				state |= BCT_ENEMY; // Can kill anything
@@ -8017,6 +8048,39 @@ int battle_check_target(struct block_list* src, struct block_list* target, int f
 		struct mob_data* md = BL_CAST(BL_MOB, s_bl);
 		if (md->guardian_data && md->guardian_data->guild_id && !mapdata_flag_gvg(mapdata))
 			return 0; // Disable guardians/emperium owned by Guilds on non-woe times.
+
+		// AI Special Mob [DanielArt]
+		if( md->option.is_event )
+		{
+			if( t_bl->type == BL_PC )
+			{
+				struct map_session_data *sd = BL_CAST(BL_PC, t_bl);
+				if( md->option.is_war && !map_flag_vs(m) && !guild_check_alliance(md->option.guild_id, sd->status.guild_id,1) )
+					return 0; // War mobs ignores non enemy guilds
+				if( md->option.ai_type == 1 )
+					state |= BCT_PARTY;
+				else if( md->option.ai_type == 3 )
+					return 0;
+			}
+			else if( t_bl->type == BL_MOB && ((TBL_MOB*)t_bl)->option.is_event )
+			{ // Mob VS Mob
+				struct mob_data *t_md = BL_CAST(BL_MOB, t_bl);
+				if( mapdata_flag_gvg(mapdata) && md->option.guild_id == t_md->option.guild_id ) {
+					state |= BCT_PARTY;
+				} else if( mapdata_flag_gvg(mapdata) && md->option.guild_id != t_md->option.guild_id && !guild_check_alliance(md->option.guild_id, t_md->option.guild_id,0) ) {
+					state |= BCT_ENEMY;
+					strip_enemy = 0;
+				}
+				else if( mapdata_flag_vs(mapdata) && md->option.party_id != t_md->option.party_id ) {
+					state |= BCT_ENEMY;
+					strip_enemy = 0;
+				}
+				else if( md->option.ai_type == 3 && t_md->option.ai_type == 3) {
+					state |= BCT_ENEMY;
+					strip_enemy = 0;
+				}
+			}
+		}
 
 		if (!md->special_state.ai)
 		{ //Normal mobs

@@ -5712,7 +5712,7 @@ bool pc_steal_item(struct map_session_data *sd,struct block_list *bl, uint16 ski
 
 	md = (TBL_MOB *)bl;
 
-	if(md->state.steal_flag == UCHAR_MAX || ( md->sc.opt1 && md->sc.opt1 != OPT1_BURNING ) ) //already stolen from / status change check
+	if(md->state.steal_flag == UCHAR_MAX || ( md->sc.opt1 && md->sc.opt1 != OPT1_BURNING ) || md->option.no_expdrop) //already stolen from / status change check
 		return false;
 
 	sd_status= status_get_status_data(&sd->bl);
@@ -8517,7 +8517,7 @@ int pc_dead(struct map_session_data *sd,struct block_list *src, uint16 skill_id)
 			struct mob_data *md=(struct mob_data *)src;
 			if(md->target_id==sd->bl.id)
 				mob_unlocktarget(md,tick);
-			if(battle_config.mobs_level_up && md->status.hp &&
+			if(battle_config.mobs_level_up && md->status.hp && !md->option.is_event &&
 				(unsigned int)md->level < pc_maxbaselv(sd) &&
 				!md->guardian_data && !md->special_state.ai// Guardians/summons should not level. [Skotlex]
 			) { 	// monster level up [Valaris]
@@ -8531,6 +8531,8 @@ int pc_dead(struct map_session_data *sd,struct block_list *src, uint16 skill_id)
 					clif_name_area(&md->bl);
 				}
 			}
+			if( md->option.is_event )
+				flag = 1;
 			src = battle_get_master(src); // Maybe Player Summon
 		}
 			break;

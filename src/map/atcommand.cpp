@@ -10442,12 +10442,13 @@ ACMD_FUNC(colornick)
 // (^~_~^) Color Nicks End
 
 /**
- * Dropea objetos en un área del suelo
+ * Dropea objetos en un area del suelo
  * @author DanielArt
 **/
 ACMD_FUNC(flooritem)
 {
 	nullpo_retr(-1, sd);
+	struct item_data *item_data;
 	int nameid, amount;
 
 	if(!message || !*message || (sscanf(message, "%d %d",&nameid, &amount) < 1)) {
@@ -10455,9 +10456,7 @@ ACMD_FUNC(flooritem)
 		return -1;
 	}
 
-	std::shared_ptr<item_data> item_data = item_db.find(nameid);
-
-	if( item_data == nullptr ) {
+	if( (item_data = itemdb_search(nameid)) == NULL ) {
 		clif_displaymessage(fd, "@flooritem - error");
 		clif_displaymessage(fd, "El objeto ingresado no existe en la base de datos.");
 		return -1;

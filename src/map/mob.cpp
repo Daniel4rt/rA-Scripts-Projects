@@ -2610,6 +2610,7 @@ int mob_dead(struct mob_data *md, struct block_list *src, int type)
 	struct status_data *status;
 	struct map_session_data *sd = NULL, *tmpsd[DAMAGELOG_SIZE];
 	struct map_session_data *mvp_sd = NULL, *second_sd = NULL, *third_sd = NULL;
+	char output[128];
 
 	struct {
 		struct party_data *p;
@@ -2711,7 +2712,7 @@ int mob_dead(struct mob_data *md, struct block_list *src, int type)
 	if(!(type&2) && //No exp
 		(!map_getmapflag(m, MF_PVP) || battle_config.pvp_exp) && //Pvp no exp rule [MouseJstr]
 		(!md->master_id || !md->special_state.ai) && //Only player-summoned mobs do not give exp. [Skotlex]
-		(!map_getmapflag(m, MF_NOBASEEXP) || !map_getmapflag(m, MF_NOJOBEXP)&& !md->option.no_expdrop)) //Gives Exp
+		(!map_getmapflag(m, MF_NOBASEEXP) || !map_getmapflag(m, MF_NOJOBEXP) && !md->option.no_expdrop) //Gives Exp
 	) { //Experience calculation.
 		int bonus = 100; //Bonus on top of your share (common to all attackers).
 		int pnum = 0;

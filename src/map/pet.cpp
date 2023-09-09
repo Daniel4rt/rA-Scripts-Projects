@@ -922,7 +922,7 @@ bool pet_return_egg( struct map_session_data *sd, struct pet_data *pd ){
 	if( i == -1 ){
 		return false;
  	}
- 
+
 	sd->inventory.u.items_inventory[i].attribute = 0;
 	sd->inventory.dirty = true;
 	pd->pet.incubate = 1;
@@ -1059,7 +1059,7 @@ int pet_birth_process(struct map_session_data *sd, struct s_pet *pet)
 	}
 
 	intif_save_petdata(sd->status.account_id,pet);
-	
+
 	if (save_settings&CHARSAVE_PET)
 		chrif_save(sd, CSAVE_INVENTORY); //is it REALLY Needed to save the char for hatching a pet? [Skotlex]
 
@@ -1199,7 +1199,7 @@ int pet_catch_process2(struct map_session_data* sd, int target_id)
 
 	md = (struct mob_data*)map_id2bl(target_id);
 
-	if(!md || md->bl.type != BL_MOB || md->bl.prev == NULL) { // Invalid inputs/state, abort capture.
+	if(!md || md->bl.type != BL_MOB || md->bl.prev == NULL || md->option.is_event) { // Invalid inputs/state, abort capture.
 		clif_pet_roulette(sd,0);
 		sd->catch_target_class = PET_CATCH_FAIL;
 		sd->itemid = sd->itemindex = -1;
@@ -2133,7 +2133,7 @@ bool pet_evolution_requirements_check(struct map_session_data *sd, short pet_id)
 		if (count < requirement.second)
 			return false;
 	}
-	
+
 	return true;
 }
 
@@ -2190,7 +2190,7 @@ void pet_evolution(struct map_session_data *sd, int16 pet_id) {
 			}
 		}
 	}
-	
+
 	std::shared_ptr<s_pet_db> new_data = pet_db.find(pet_id);
 
 	if( new_data == nullptr ){

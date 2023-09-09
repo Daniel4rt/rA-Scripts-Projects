@@ -21,6 +21,9 @@
 ///Maximum allowed Item ID (range: 1 ~ 65,534)
 #define MAX_ITEMID USHRT_MAX
 
+///Maximum amount of items to drop in an area
+#define MAX_ITEM_DROP_AREA 200
+
 #define MAX_ITEMGROUP_RANDGROUP 4	///Max group for random item (increase this when needed). TODO: Remove this limit and use dynamic size if needed
 
 #define MAX_ROULETTE_LEVEL 7 /** client-defined value **/
