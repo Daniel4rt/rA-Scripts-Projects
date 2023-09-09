@@ -70,6 +70,7 @@ enum MOBID {
 	MOBID_S_HORNET			= 2158,
 	MOBID_S_GIANT_HORNET,
 	MOBID_S_LUCIOLA_VESPA,
+	MOBID_EVENT_EMPERIUM	= 10128, // Cambiar por el clon del emperium de evento [DanielArt]
 };
 
 ///Mob skill states.

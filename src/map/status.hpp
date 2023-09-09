@@ -859,6 +859,7 @@ enum sc_type : int16 {
 	SC_LHZ_DUN_N3,
 	SC_LHZ_DUN_N4,
 
+	SC_ENSEMBLEFATIGUE,
 	SC_ANCILLA,
 	SC_EARTHSHAKER,
 
@@ -1992,7 +1993,7 @@ enum efst_types : short{
 	EFST_MD_Ma_Potion,
 	EFST_MD_Ta_Potion,
 	EFST_MD_Ra_Potion,
-	
+
 	SI_STONE = 1200,
 	SI_FREEZE,
 	SI_STUN,
