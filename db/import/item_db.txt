@@ -93,11 +93,11 @@
 //Set Ninja
 61000,Emp_Ninja_Armor,Ninja Armor,4,10,,400,,3,,1,0x02000000,7,2,16,,90,1,0,{ callfunc "Glorius_Effect",61000; },{},{}
 61001,Emp_Ninja_Garment,Ninja Garment,4,1000,,200,,3,,1,0x02000000,7,2,4,,90,1,0,{ callfunc "Glorius_Effect",61001; },{},{}
-61002,Emp_Ninja_Shoes,Ninja Shoes,4,3500,,400,,2,,3,0x02000000,7,2,64,,90,1,0,{ callfunc "Glorius_Effect",61002; },{},{}
+61002,Emp_Ninja_Shoes,Ninja Shoes,4,3500,,400,,2,,1,0x02000000,7,2,64,,90,1,0,{ callfunc "Glorius_Effect",61002; },{},{}
 //Set Gunslinger
 61004,Emp_Gunslinger_Armor,Gunslinger Armor,4,10,,400,,3,,1,0x41000000,7,2,16,,90,1,0,{ callfunc "Glorius_Effect",61004; },{},{}
 61005,Emp_Gunslinger_Garment,Gunslinger Garment,4,1000,,200,,3,,1,0x41000000,7,2,4,,90,1,0,{ callfunc "Glorius_Effect",61005; },{},{}
-61006,Emp_Gunslinger_Shoes,Gunslinger Shoes,4,3500,,400,,2,,3,0x41000000,7,2,64,,90,1,0,{ callfunc "Glorius_Effect",61006; },{},{}
+61006,Emp_Gunslinger_Shoes,Gunslinger Shoes,4,3500,,400,,2,,1,0x41000000,7,2,64,,90,1,0,{ callfunc "Glorius_Effect",61006; },{},{}
 
 2773,Krieger_Ring2,Glorious Mass-Production Ring,4,20,,0,,0,,0,0xFFFFFFFE,7,2,136,,61,0,0,{ callfunc "Glorius_Effect",2773; },{},{}
 2772,Krieger_Ring1,Glorious Ring,4,20,,0,,0,,0,0xFFFFFFFE,7,2,136,,81,0,0,{ callfunc "Glorius_Effect",2772; },{},{}
