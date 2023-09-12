@@ -5,7 +5,7 @@ function	script	Glorius_Effect	{
 	}
 	.@r = getrefine();
 	switch (getarg(0)) {
-   		case 1310:
+   	case 1310:
 			bonus2 bIgnoreDefRaceRate,RC_DemiHuman,30;
 			bonus2 bIgnoreDefRaceRate,RC_Player,30;
 			bonus bUnbreakableWeapon;
@@ -193,7 +193,7 @@ function	script	Glorius_Effect	{
 				bonus bLongAtkRate,10;
 			}
 			break;
-   		case 1282:
+   	case 1282:
 			bonus2 bAddRace,RC_DemiHuman,70;
 			bonus2 bAddRace,RC_Player,70;
 			bonus2 bCriticalAddRace,RC_DemiHuman,30;
@@ -269,7 +269,7 @@ function	script	Glorius_Effect	{
 				bonus3 bHPVanishRate,50,5,BF_NORMAL;
 			}
 			break;
-   		case 1546:
+   	case 1546:
 			bonus2 bAddRace,RC_DemiHuman,60;
 			bonus2 bAddRace,RC_Player,60;
 			bonus2 bIgnoreDefRaceRate,RC_DemiHuman,30;
@@ -321,7 +321,7 @@ function	script	Glorius_Effect	{
 				bonus2 bCastrate,"MO_EXTREMITYFIST",-15;
 			}
 			break;
-   		case 2002:
+   	case 2002:
 			bonus2 bMagicAddRace,RC_DemiHuman,30;
 			bonus2 bMagicAddRace,RC_Player,30;
 			bonus2 bIgnoreMdefRaceRate,RC_DemiHuman,30;
@@ -606,7 +606,7 @@ function	script	Glorius_Effect	{
 				bonus bHealPower2,10;
 			}
 			break;
-   		case 13307:
+   	case 13307:
 			bonus2 bMagicAddRace,RC_DemiHuman,30;
 			bonus2 bMagicAddRace,RC_Player,30;
 			bonus2 bAddRace,RC_DemiHuman,70;
@@ -816,7 +816,7 @@ function	script	Glorius_Effect	{
 				bonus2 bIgnoreDefRaceRate,RC_Player,20;
 			}
 			break;
-   		case 13110:
+   	case 13110:
 			bonus2 bAddRace,RC_DemiHuman,50;
 			bonus2 bAddRace,RC_Player,50;
 			bonus2 bCriticalAddRace,RC_DemiHuman,15;
@@ -887,7 +887,7 @@ function	script	Glorius_Effect	{
 				autobonus "{ bonus bCritical,20; }",50,5000,"GS_PIERCINGSHOT","{ specialeffect2 EF_ENHANCE; }";
 			}
 			break;
-   		case 1281:
+   	case 1281:
 			bonus2 bAddRace,RC_DemiHuman,70;
 			bonus2 bAddRace,RC_Player,70;
 			bonus2 bIgnoreDefRaceRate,RC_DemiHuman,30;
@@ -960,7 +960,7 @@ function	script	Glorius_Effect	{
 				bonus5 bAutoSpellOnSkill,"TF_POISON","PR_IMPOSITIO",5,50,0;
 			}
 			break;
-   		case 1827:
+   	case 1827:
 			bonus2 bLongAtkAddRace,RC_DemiHuman,50;
 			bonus2 bLongAtkAddRace,RC_Player,50;
 			bonus2 bIgnoreDefRaceRate,RC_DemiHuman,30;
@@ -1127,7 +1127,7 @@ function	script	Glorius_Effect	{
 				bonus2 bSkillAtk,"PA_PRESSURE",5;
 			}
 			break;
-   		case 1826:
+   	case 1826:
 			bonus2 bMagicAddRace,RC_DemiHuman,30;
 			bonus2 bMagicAddRace,RC_Player,30;
 			bonus2 bAddRace,RC_DemiHuman,20;
@@ -1386,7 +1386,7 @@ function	script	Glorius_Effect	{
 				bonus3 bAutoSpellWhenHit,"AL_INCAGI",5,500;
 			}
 			break;
-   		case 1382:
+   	case 1382:
 			bonus2 bIgnoreDefRaceRate,RC_DemiHuman,30;
 			bonus2 bIgnoreDefRaceRate,RC_Player,30;
 			bonus bUnbreakableWeapon;
@@ -1437,7 +1437,7 @@ function	script	Glorius_Effect	{
 				bonus bIgnoreDefRace,RC_DemiHuman;
 				bonus bIgnoreDefRace,RC_Player;
 			}
-			break;			
+			break;
 		// Error
 		case 0:
 		default:
