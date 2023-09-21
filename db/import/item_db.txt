@@ -23,11 +23,6 @@
 //Modificado
 5550,Taurus_Crown,Taurus Crown,4,20,,300,,3,,0,0xFFFFFFFF,7,2,256,,70,1,536,{ bonus bAgi,2; bonus bFlee,10; bonus2 bAddEff,Eff_Stun,2000+(getrefine()*250); if(getrefine()>6) { bonus bBaseAtk,15; bonus bAspdRate,5;} },{},{}
 
-////Modificar requisitos
-//Los Jobs normales tambien pueden equipar Bradium Earring (Para que se lo pueda equipar el Soul Linker)
-2788,Bradium_Earing,Bradium Earring,4,20,,200,,0,,1,0xFFFFFFFE,7,2,136,,0,0,0,{ bonus bInt,1; bonus bDex,1; bonus bMatkRate,2; },{},{}
-2789,Bradium_Ring,Bradium Ring,4,20,,200,,0,,1,0xFFFFFFFF,18,2,136,,0,0,0,{ bonus bStr,1; bonus bVit,1; bonus2 bAddClass,Class_All,2; bonus2 bMagicAddClass,Class_All,2; },{},{}
-2790,Bradium_Brooch,Bradium Brooch,4,20,,200,,0,,1,0xFFFFFFFF,18,2,136,,0,0,0,{ bonus bAgi,1; bonus bFlee,4; bonus bAspdRate,2; },{},{}
 //Equipo usable para todos
 5181,Helm_Of_Darkness,Helm of Darkness,4,20,,2000,,3,,1,0xFFFFFFFF,7,2,768,,50,1,233,{ bonus bStr,2; },{},{}
 2250,Fillet,Cute Ribbon,4,500,,100,,1,,0,0xFFFFFFFF,7,2,256,,0,0,34,{ bonus bMaxSP,20; },{},{}
