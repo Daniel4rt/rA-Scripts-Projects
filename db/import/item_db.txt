@@ -141,6 +141,50 @@
 2789,Bradium_Ring,Bradium Ring,4,20,,200,,0,,1,0xFFFFFFFE,2,2,136,,60,0,0,{ callfunc "Bradium_Effect",2789; },{},{}
 2138,Bradium_Shield,Bradium Shield,4,20,,1800,,5,,1,0x00CFFF80,2,2,32,,65,1,3,{ callfunc "Bradium_Effect",2138; },{},{}
 
+
+//[Middle & Lower Head] 
+
+5314,Hockey_Mask,Hockey Mask,4,20,,100,,1,,0,0xFFFFFFFF,7,2,513,,50,0,336,{ callfunc "GearMiddleLower_Effect",5314; },{},{}
+5483,Odin_Mask,Odin Mask,4,20,,100,,1,,0,0xFFFFFFFF,7,2,513,,50,0,480,{ callfunc "GearMiddleLower_Effect",5483; },{},{}
+5565,Dragon_Arhat_Mask,Dragon Arhat Mask,4,0,,0,,5,,0,0xFFFFFFFF,7,2,513,,1,0,545,{ callfunc "GearMiddleLower_Effect",5565; },{},{}
+5176,Hahoe_Mask,Hahoe Mask,4,30000,,100,,2,,0,0xFFFFFFFF,7,2,513,,30,0,230,{ callfunc "GearMiddleLower_Effect",5176; },{},{}
+5566,Tiger_Arhat_Mask,Tiger Arhat Mask,4,0,,0,,1,,0,0xFFFFFFFF,7,2,513,,1,0,546,{ callfunc "GearMiddleLower_Effect",5566; },{},{}
+5332,Loki_Mask,Loki Mask,4,0,,200,,0,,0,0xFFFFFFFF,7,2,513,,20,0,346,{ callfunc "GearMiddleLower_Effect",5332; },{},{}
+
+//[Lower Head]
+
+5594,Donut_In_Mouth,Donut In Mouth,4,20,,50,,1,,0,0xFFFFFFFF,7,2,1,,1,0,569,{ callfunc "GearLower_Effect",5594; },{},{}
+5054,Assassin_Mask,Assassin Mask,4,20,,100,,0,,0,0x00001100,7,2,1,,70,0,180,{ callfunc "GearLower_Effect",5054; },{},{}
+5107,Well_Baked_Toast,Crunch Toast,4,20,,50,,0,,0,0xFFFFFFFF,7,2,1,,0,0,188,{ callfunc "GearLower_Effect",5107; },{},{}
+5305,Pirate_Dagger,Pirate Dagger,4,20,,100,,0,,0,0xFFFFFFFF,7,2,1,,0,0,327,{ callfunc "GearLower_Effect",5305; },{},{}
+5775,Choco_Donut_In_Mouth,Choco Donut In Mouth,4,20,,50,,1,,0,0xFFFFFFFF,7,2,1,,1,0,653,{ callfunc "GearLower_Effect",5775; },{},{}
+5536,Spare_Card,Spare Card,4,20,,10,,1,,0,0xFFFFFFFF,7,2,1,,1,0,526,{ callfunc "GearLower_Effect",5536; },{},{}
+5597,Bubble_Gum_In_Mouth,Bubble Gum In Mouth,4,20,,0,,2,,0,0xFFFFFFFF,7,2,1,,1,0,572,{ callfunc "GearLower_Effect",5597; },{},{}
+5463,Rainbow_Scarf,Rainbow Scarf,4,20,,100,,1,,0,0xFFFFFFFF,7,2,1,,90,0,460,{ callfunc "GearLower_Effect",5463; },{},{}
+5596,4Leaf_Clover_In_Mouth,4Leaf Clover In Mouth,4,20,,0,,2,,0,0xFFFFFFFF,7,2,1,,1,0,571,{ callfunc "GearLower_Effect",5596; },{},{}
+5445,Candy_Cane_In_The_Mouth,Candy Cane In Mouth,4,20,,100,,0,,0,0xFFFFFFFF,7,2,1,,0,0,446,{ callfunc "GearLower_Effect",5445; },{},{}
+5548,Scarlet_Rose,Scarlet Rose,4,20,,100,,0,,0,0xFFFFFFFF,7,2,1,,50,1,534,{ callfunc "GearLower_Effect",5548; },{},{}
+5811,Santa_Beard,Santa's Beard,4,20,,100,,5,,0,0xFFFFFFFF,7,2,1,,0,0,25,{ callfunc "GearLower_Effect",5811; },{},{}
+5377,Antique_Pipe,Gentleman's Pipe,4,20,,100,,0,,0,0xFFFFFFFF,7,2,1,,0,0,383,{ callfunc "GearLower_Effect",5377; },{},{}
+5362,Ninja_Scroll,Ninja Scroll,4,20,,200,,0,,0,0xFFFFFFFF,7,2,1,,60,0,370,{ callfunc "GearLower_Effect",5362; },{},{}
+18505,Umbala_Spirit,Umbala Spirit,4,0,,200,,1,,1,0xFFFFFFFF,7,2,1,,30,0,675,{ callfunc "GearLower_Effect",18505; },{},{}
+5155,Granpa_Beard_F,Father's White Moustache,4,20,,100,,0,,0,0xFFFFFFFF,7,2,1,,0,0,25,{ callfunc "GearLower_Effect",5155; },{},{}
+
+//[Middle Head]
+
+5800,Blush_Of_Groom,Blush of Groom,4,20,,50,,0,,0,0xFFFFFFFF,7,2,512,,0,0,125,{ callfunc "GearMiddle_Effect",5800; },{},{}
+5389,Angel_Spirit,Angel Spirit,4,20,,200,,0,,0,0xFFFFFFFF,7,2,512,,30,0,394,{ callfunc "GearMiddle_Effect",5389; },{},{}
+5074,Ear_Of_Angel's_Wing,Angel Wing Ears,4,20,,100,,1,,0,0xFFFFFFFF,7,2,512,,70,0,158,{ callfunc "GearMiddle_Effect",5074; },{},{}
+5068,Ear_Of_Devil's_Wing,Evil Wing Ears,4,20,,100,,1,,0,0xFFFFFFFF,7,2,512,,70,0,152,{ callfunc "GearMiddle_Effect",5068; },{},{}
+5402,Mischievous_Fairy,Mischievous Fairy,4,10,,200,,1,,0,0xFFFFFFFF,7,2,512,,70,0,405,{ callfunc "GearMiddle_Effect",5402; },{},{}
+5043,Opera_Ghost_Mask,Opera Phantom Mask,4,20,,200,,1,,0,0xFFFFFFFE,7,2,512,,20,0,128,{ callfunc "GearMiddle_Effect",5043; },{},{}
+5592,Sigrun's_Wing,Sigrun's Wings,4,20,,100,,2,,0,0xFFFFFFFF,7,2,512,,80,0,568,{ callfunc "GearMiddle_Effect",5592; },{},{}
+5421,Ifrit's_Ear,Ears Of Ifrit,4,20,,0,,0,,0,0xFFFFFFFE,7,2,512,,70,0,422,{ callfunc "GearMiddle_Effect",5421; },{},{}
+5397,Scuba_Mask,Scuba Gear,4,20,,100,,0,,0,0xFFFFFFFF,7,2,512,,0,0,400,{ callfunc "GearMiddle_Effect",5397; },{},{}
+5085,Pair_Of_Red_Ribbon,Small Ribbons,4,20,,100,,1,,0,0xFFFFFFFF,7,2,512,,45,0,169,{ callfunc "GearMiddle_Effect",5085; },{},{}
+5401,Black_Glasses,Black Frame Glasses,4,20,,200,,1,,0,0xFFFFFFFF,7,2,512,,70,0,404,{ callfunc "GearMiddle_Effect",5401; },{},{}
+5040,Blush,Blush,4,20,,100,,0,,0,0xFFFFFFFF,7,2,512,,0,0,125,{ callfunc "GearMiddle_Effect",5040; },{},{}
+
 //Fix
 //12548,Buy_Market_Permit2,Shabby Purchase Street Stall License,2,500,,10,,,,,0xFFFFFFFF,7,2,,,,,,{ getmapxy(.@map$,.@x,.@y,BL_PC); if(checkcell(.@map$,.@x,.@y,cell_novending)){buyingstore 2;} else {dispbottom "This item can only be used in merchant zone. "+checkcell(.@map$,.@x,.@y,cell_novending)+""; getitem 12548,1;} },{},{}
 
